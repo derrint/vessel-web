@@ -44,19 +44,19 @@ const Banner = () => {
       className="relative pt-[88px] md:pt-[96px] lg:pt-[112px]"
     >
       <Section className="flex gap-10">
-        <div className="w-7/12 flex flex-col justify-center py-6">
+        <div className="w-7/12 flex flex-col justify-center py-6 relative">
           <Fade top duration={750} delay={500} when={state.isReady}>
-            <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line">
+            <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2]">
               {text?.first}
             </h1>
           </Fade>
           <Fade top duration={750} delay={750} when={state.isReady}>
-            <p className="text-sm sm:text-base lg:text-lg mt-6 whitespace-pre-line">
+            <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2]">
               {text?.second}
             </p>
           </Fade>
           <Fade top duration={750} delay={750} when={state.isReady}>
-            <div className="mt-10">
+            <div className="mt-10 z-[2]">
               <button
                 className="
                 px-8 py-4 rounded-2xl
@@ -71,7 +71,7 @@ const Banner = () => {
           </Fade>
 
           <Fade top duration={750} delay={750} when={state.isReady}>
-            <div className="mt-8">
+            <div className="mt-8 z-[2]">
               <Link
                 href={
                   'https://docs.openvessel.io/integration/EZzgG67O9oXGl9CReheF/'
@@ -87,6 +87,11 @@ const Banner = () => {
               </Link>
             </div>
           </Fade>
+
+          <div className="flex absolute z-[1] top-0 left-32">
+            <div className="bg-primary opacity-30 w-60 h-60 blur-3xl"></div>
+            <div className="bg-secondary opacity-30 w-60 h-60 blur-3xl"></div>
+          </div>
         </div>
 
         <div className="w-5/12 relative">
