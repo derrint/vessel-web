@@ -33,7 +33,7 @@ const Features = () => {
     {
       title: 'We power blockchain infrastructure for mobile applications',
       description:
-        'Vessel app provides a production, staging and development environment. Our features will enable you to do anything in blockchain. Build an app, yes. Mint an NFT, absolutely. Buy, sell & store your items, everything on us.\n\n\nNothing like Vessel.',
+        'Vessel app provides a production, staging and development environment. Our features will enable you to do anything in blockchain. Build an app, yes. Mint an NFT, absolutely. Buy, sell & store your items, everything on us.\n\nNothing like Vessel.',
       asset: '/assets/images/illustrations/illustration-infra.png',
     },
   ];
@@ -54,7 +54,7 @@ const Features = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-base lg:text-lg lg:leading-7 text-black/80">
+                <p className="text-base lg:text-lg lg:leading-7 text-black/80 whitespace-pre-line">
                   {item.description}
                 </p>
               </div>
