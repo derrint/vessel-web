@@ -1,10 +1,11 @@
-import { Banner, Features } from '@components/page/home';
+import { Banner, Code, Features } from '@components/page/home';
 
 const Home = () => {
   return (
     <>
       <Banner />
       <Features />
+      <Code />
     </>
   );
 };

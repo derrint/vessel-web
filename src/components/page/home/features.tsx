@@ -39,7 +39,7 @@ const Features = () => {
   ];
 
   return (
-    <Section yPadding="py-8 sm:py-16" id="about">
+    <Section yPadding="py-8 sm:py-16" id="features">
       <div className="relative flex flex-col justify-center z-[1] gap-40">
         {features.map((item: any, idx: number) => (
           <div
