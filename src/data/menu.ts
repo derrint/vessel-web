@@ -19,7 +19,7 @@ const menus = [
   {
     id: 3,
     label: 'Company',
-    href: '/about',
+    href: '/company',
     isDesktop: true,
     isMobile: true,
   },

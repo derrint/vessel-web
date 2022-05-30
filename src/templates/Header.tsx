@@ -2,6 +2,7 @@ import React from 'react';
 
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { Fade } from 'react-reveal';
 
@@ -12,6 +13,8 @@ import { NavbarTwoColumns } from '@components/navigation/NavbarTwoColumns';
 import { menus } from '@data/index';
 
 const Header = () => {
+  const router = useRouter();
+
   const [state, setState] = React.useState({
     isReady: false,
     isAnimationDone: false,
@@ -86,7 +89,10 @@ const Header = () => {
                             isButton
                               ? 'bg-primary px-4 lg:px-6 py-2 lg:py-4 rounded-full'
                               : ''
-                          }`}
+                          }
+                          ${router.pathname === href ? 'text-primary' : ''}
+                          `}
+                          target={isExternalLink ? '_blank' : ''}
                         >
                           {label}
                           {isExternalLink && (
