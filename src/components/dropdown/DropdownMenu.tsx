@@ -19,8 +19,7 @@ type IDropdownMenuProps = {
 };
 
 const DropdownMenu = (props: IDropdownMenuProps) => {
-  const defaultImage =
-    'https://derrint.sirv.com/Images/simple-duck-studios/icon-outline.svg';
+  const defaultImage = '/assets/images/logos/logo-icon.png';
   const [previewImage, setPreviewImage] = React.useState(defaultImage);
 
   return (
