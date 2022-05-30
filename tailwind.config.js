@@ -32,7 +32,7 @@ module.exports = {
         hero: '4.5rem',
       },
       boxShadow: {
-        md: '0px 4px 20px rgba(0, 52, 185, 0.08);',
+        md: '4px 8px 20px 0px #0034B940',
       },
     },
   },

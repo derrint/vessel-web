@@ -1,7 +1,6 @@
 import {
   Banner,
   About,
-  Services,
   Spotlight,
   AdNetwork,
   ContactUs,
@@ -17,7 +16,7 @@ const Home = () => {
       <About />
       {/* <Offers /> */}
       <Testimonials />
-      <Services />
+      {/* <Services /> */}
       <Spotlight />
       <AdNetwork />
       <ContactUs />
