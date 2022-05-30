@@ -8,6 +8,18 @@ import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
 const Highlights = () => {
+  const [state, setState] = React.useState({
+    isReady: false,
+  });
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setState({ ...state, isReady: true });
+    }, 250);
+
+    return () => {};
+  }, []);
+
   const highlights = [
     {
       title: 'About Vessel',
@@ -17,16 +29,20 @@ const Highlights = () => {
     },
   ];
   return (
-    <Fade bottom duration={750} delay={250}>
+    <Fade bottom duration={750} delay={250} when={state.isReady}>
       <Background color="bg-white" className="overflow-hidden">
         <Section yPadding="py-8 sm:py-16 lg:py-32">
-          <Fade bottom duration={750} delay={500} cascade>
-            <div className="flex flex-col gap-32">
-              {highlights.map((item: any, idx: number) => (
-                <div
-                  key={idx}
-                  className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-12"
-                >
+          <div className="flex flex-col gap-32">
+            {highlights.map((item: any, idx: number) => (
+              <Fade
+                bottom
+                duration={750}
+                delay={500}
+                cascade
+                when={state.isReady}
+                key={idx}
+              >
+                <div className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-12">
                   <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:leading-[80px] font-semibold mb-0 tracking-tight">
                     {item.title}
                   </h1>
@@ -58,9 +74,9 @@ const Highlights = () => {
                     )}
                   </div>
                 </div>
-              ))}
-            </div>
-          </Fade>
+              </Fade>
+            ))}
+          </div>
         </Section>
       </Background>
     </Fade>

@@ -30,13 +30,10 @@ const Highlights = () => {
     <Fade bottom duration={750} delay={250}>
       <Background color="bg-white" className="overflow-hidden">
         <Section yPadding="py-8 sm:py-16 lg:py-32">
-          <Fade bottom duration={750} delay={500} cascade>
-            <div className="flex flex-col gap-32">
-              {highlights.map((item: any, idx: number) => (
-                <div
-                  key={idx}
-                  className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-4"
-                >
+          <div className="flex flex-col gap-32">
+            {highlights.map((item: any, idx: number) => (
+              <Fade bottom duration={750} delay={500} cascade key={idx}>
+                <div className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-4">
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight">
                     {item.title}
                   </h1>
@@ -68,9 +65,9 @@ const Highlights = () => {
                     )}
                   </div>
                 </div>
-              ))}
-            </div>
-          </Fade>
+              </Fade>
+            ))}
+          </div>
         </Section>
       </Background>
     </Fade>

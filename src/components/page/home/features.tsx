@@ -48,7 +48,13 @@ const Features = () => {
               idx % 2 === 0 ? 'flex-row-reverse' : ''
             }`}
           >
-            <Fade left duration={750} delay={250} when={state.isReady} cascade>
+            <Fade
+              left
+              duration={750}
+              delay={150 * (idx + 1)}
+              when={state.isReady}
+              cascade
+            >
               <div className="w-full sm:w-2/3 lg:w-1/2">
                 <h3 className="text-xl sm:text-2xl lg:text-5xl font-medium mb-3 lg:mb-5 tracking-tight lg:leading-[60px]">
                   {item.title}
