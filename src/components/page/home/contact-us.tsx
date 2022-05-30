@@ -1,126 +1,129 @@
-import { useState } from 'react';
+import React from 'react';
 
-import { RadioGroup } from '@headlessui/react';
-import Link from 'next/link';
 import { FaChevronDown } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
 import { IoPaperPlaneOutline } from 'react-icons/io5';
-import { Fade } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 
+import { Background } from '@components/background';
 import { Section } from '@components/layout';
-import { services } from '@data/index';
 
 const ContactUs = () => {
-  const plans = ['$500 - $5K', '$5k - $20k', '$20k - $50k', '$50k+'];
+  const numOfPeople = ['1 - 50', '50 - 200', '200 - 5000', '5000+'];
 
-  const [selected, setSelected] = useState(null as any);
+  const [state, setState] = React.useState({
+    isReady: false,
+    playable: '',
+  });
+
+  React.useEffect(() => {
+    setState({ ...state, isReady: true });
+
+    return () => {};
+  }, []);
 
   return (
-    <Section id="contact" yPadding="py-10 pt-6">
-      <div className="relative min-h-[720px] flex flex-col sm:flex-row gap-10 sm:gap-0lg:gap-20">
-        <Fade bottom duration={750} delay={250} cascade>
-          <div className="w-full sm:w-5/12 lg:w-1/3 lg:px-8">
-            <h3 className="text-lg sm:text-xl lg:text-2xl sm:mb-3">
-              Shoot us an e-mail
-            </h3>
-            <Link href={'mailto:hi@simpleduckstudios.com'} passHref>
-              <a className="text-sm lg:text-base">
-                <FiMail className="text-secondary inline mr-2 w-[22px]" />
-                <span className="inline break-all">
-                  sales@simpleduckstudios.com
-                </span>
-              </a>
-            </Link>
-
-            {/* <h3 className="text-lg sm:text-xl lg:text-2xl sm:mb-3 mt-5 sm:mt-10">
-            Follow our socials
-          </h3>
-          <div>
-            <Link href={'https://instagram.com'} passHref>
-              <a className="text-sm lg:text-base">
-                <FiInstagram className="text-secondary inline mr-2 w-[22px]" />
-              </a>
-            </Link>
-            <Link href={'https://instagram.com'} passHref>
-              <a className="text-sm lg:text-base">
-                <FiTwitter className="text-secondary inline mr-2 w-[22px]" />
-              </a>
-            </Link>
-          </div> */}
-          </div>
-        </Fade>
-
+    <Background
+      color="bg-gradient-to-b from-gradient-primary-start to-gradient-primary-end"
+      className="relative"
+    >
+      <Section id="contact" yPadding="py-32">
         <Fade bottom duration={750} delay={500} cascade>
-          <div className="w-full sm:w-7/12 lg:w-2/3 lg:px-8">
-            <form action="https://formspree.io/f/mayvploj" method="POST">
-              <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-500 mb-2">
-                Any inquiries?
-              </h2>
-              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-4">
-                Contact us, we’re happy to help!
-              </h1>
+          <form action="https://formspree.io/f/mayvploj" method="POST">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight text-center text-white">
+              Build in the metaverse with{' '}
+              <span className="font-bold">Vessel</span> today
+            </h1>
+            <p className="lg:text-lg lg:leading-7 text-white/80 whitespace-pre-line text-center mt-6">
+              We guarantee you a response in under 24 hours.
+              <br />
+              Our API is completely free, create NFTs at zero cost.
+              <br />
+              No blockchain experience necessary.
+            </p>
 
-              <div className="lg:w-10/12 mt-6">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  Name & Company
-                </label>
-                <div className="mt-3 relative rounded-md">
+            <div className="flex flex-col items-center mt-12">
+              <div className="grid grid-cols-2 gap-6 w-full max-w-screen-md">
+                <div className="">
                   <input
                     type="text"
                     name="name"
                     id="name"
-                    className="block w-full px-4 py-3 sm:text-sm rounded-md bg-[#F5F5F5] outline-1 outline-black"
-                    placeholder="John Doe from Simple Duck"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
+                    placeholder="Full name*"
                     required
                   />
                 </div>
-              </div>
 
-              <div className="lg:w-10/12 mt-6">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  E-mail
-                </label>
-                <div className="mt-3 relative rounded-md">
+                <div className="">
+                  <input
+                    type="text"
+                    name="applovin"
+                    id="applovin"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
+                    placeholder="Applovin account"
+                    required
+                  />
+                </div>
+
+                <div className="">
+                  <input
+                    type="text"
+                    name="telegram_discord"
+                    id="telegram_discord"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
+                    placeholder="Telegram or Discord"
+                    required
+                  />
+                </div>
+
+                <div className="">
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className="block w-full px-4 py-3 sm:text-sm rounded-md bg-[#F5F5F5] outline-1 outline-black"
-                    placeholder="john@simpleduckstudios.com"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
+                    placeholder="Email*"
                     required
                   />
                 </div>
-              </div>
 
-              <div className="lg:w-10/12 mt-6">
-                <label
-                  htmlFor="project"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  I’m interested in
-                </label>
-                <div className="mt-3 relative rounded-md">
+                <div className="relative">
                   <select
-                    id="project"
-                    name="project"
-                    className="block w-full px-4 py-3 sm:text-sm rounded-md bg-[#F5F5F5] outline-1 outline-black appearance-none"
+                    id="num_of_people"
+                    name="num_of_people"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary appearance-none"
                     required
                   >
                     <option value="" disabled selected>
-                      Choose your project type
+                      Number of people
                     </option>
-                    {services.map((item) => (
-                      <option key={item.id} value={item.id}>
-                        {item.label}
+                    {numOfPeople.map((item) => (
+                      <option key={item} value={item}>
+                        {item}
                       </option>
                     ))}
-                    <option value="others">Others</option>
+                  </select>
+                  <FaChevronDown
+                    size={12}
+                    className="absolute top-1/2 -translate-y-1/2 right-3"
+                  />
+                </div>
+
+                <div className="relative">
+                  <select
+                    id="num_of_people"
+                    name="num_of_people"
+                    className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary appearance-none"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Blockchain of interest
+                    </option>
+                    {numOfPeople.map((item) => (
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    ))}
                   </select>
                   <FaChevronDown
                     size={12}
@@ -129,71 +132,53 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div className="lg:w-10/12 mt-6">
-                <RadioGroup value={selected} onChange={setSelected}>
-                  <RadioGroup.Label className="text-sm font-bold text-gray-700">
-                    Project Budget
-                  </RadioGroup.Label>
-                  <div className="mt-3">
-                    {plans.map((plan) => (
-                      <RadioGroup.Option
-                        key={plan}
-                        value={plan}
-                        className={({ active, checked }) =>
-                          `${active ? '' : ''}
-                  ${checked ? 'ring-offset-secondary text-secondary' : ''}
-                    bg-white relative rounded-full px-5 py-2 inline-block mr-5 mb-5 focus:outline-none ring-2 ring-offset-2 ring-offset-black ring-white ring-opacity-60`
-                        }
-                      >
-                        {({ checked }) => (
-                          <>
-                            <div
-                              className={` whitespace-nowrap ${
-                                checked ? 'text-secondary' : 'text-black'
-                              }`}
-                            >
-                              {plan}
-                            </div>
-                          </>
-                        )}
-                      </RadioGroup.Option>
-                    ))}
-                  </div>
-                </RadioGroup>
-                <input type="hidden" name="budget" value={selected} />
+              <div className="w-full max-w-screen-md mt-6">
+                <textarea
+                  name="description"
+                  id="description"
+                  className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
+                  placeholder="We need help to...."
+                />
               </div>
 
-              <div className="lg:w-10/12 mt-6">
-                <label
-                  htmlFor="description"
-                  className="block text-sm font-bold text-gray-700"
-                >
-                  Project Description
-                </label>
-                <div className="mt-3 relative rounded-md">
-                  <textarea
-                    name="description"
-                    id="description"
-                    className="block w-full px-4 py-3 sm:text-sm rounded-md bg-[#F5F5F5] outline-1 outline-black"
-                    placeholder="We need help to...."
-                  />
-                </div>
-              </div>
-
-              <div className="flex mt-10 justify-center sm:justify-start">
+              <div className="flex mt-6 justify-center sm:justify-start">
                 <button
                   type="submit"
-                  className="lg:text-lg bg-primary px-6 py-4 rounded-full flex items-center gap-2 font-bold"
+                  className="lg:text-xl bg-secondary px-10 py-4 rounded-2xl flex items-center gap-4 font-medium"
                 >
+                  Reach out
                   <IoPaperPlaneOutline size={24} />
-                  Send
                 </button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </Fade>
-      </div>
-    </Section>
+      </Section>
+
+      <Zoom duration={750} delay={500} when={state.isReady}>
+        <img
+          src="/assets/images/vectors/swoosh-lg.svg"
+          alt=""
+          className="absolute right-0 top-[30%] w-[120px] z-[1]"
+        />
+      </Zoom>
+
+      <Zoom duration={750} delay={1250} when={state.isReady}>
+        <img
+          src="/assets/images/vectors/swoosh-lg.svg"
+          alt=""
+          className="absolute left-[10%] top-[40%] w-[120px] z-[1]"
+        />
+      </Zoom>
+
+      <Zoom duration={750} delay={1000} when={state.isReady}>
+        <img
+          src="/assets/images/vectors/swoosh-lg.svg"
+          alt=""
+          className="absolute right-[10%] bottom-[10%] w-[120px] z-[1]"
+        />
+      </Zoom>
+    </Background>
   );
 };
 
