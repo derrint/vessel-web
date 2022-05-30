@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 // import Tippy from '@tippyjs/react';
@@ -5,7 +6,7 @@ import React from 'react';
 import 'tippy.js/animations/scale.css';
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
-import { Fade, Zoom } from 'react-reveal';
+import { Fade } from 'react-reveal';
 // import { followCursor } from 'tippy.js';
 
 import { Background } from '@components/background';
@@ -39,10 +40,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <Background
-      color="bg-white"
-      className="relative pt-[88px] md:pt-[96px] lg:pt-[112px]"
-    >
+    <Background color="bg-white" className="relative py-20 md:py-24 lg:py-30">
       <Section className="flex gap-10">
         <div className="w-7/12 flex flex-col justify-center py-6 relative">
           <Fade top duration={750} delay={500} when={state.isReady}>
@@ -55,7 +53,7 @@ const Banner = () => {
               {text?.second}
             </p>
           </Fade>
-          <Fade top duration={750} delay={750} when={state.isReady}>
+          <Fade top duration={750} delay={1000} when={state.isReady}>
             <div className="mt-10 z-[2]">
               <button
                 className="
@@ -70,7 +68,7 @@ const Banner = () => {
             </div>
           </Fade>
 
-          <Fade top duration={750} delay={750} when={state.isReady}>
+          <Fade top duration={750} delay={1250} when={state.isReady}>
             <div className="mt-8 z-[2]">
               <Link
                 href={
@@ -88,42 +86,44 @@ const Banner = () => {
             </div>
           </Fade>
 
-          <div className="flex absolute z-[1] top-0 left-32">
-            <div className="bg-primary opacity-30 w-60 h-60 blur-3xl"></div>
-            <div className="bg-secondary opacity-30 w-60 h-60 blur-3xl"></div>
-          </div>
+          <Fade duration={750} delay={2250} when={state.isReady}>
+            <div className="flex absolute z-[1] top-0 left-32">
+              <div className="bg-primary/30 w-60 h-60 blur-3xl"></div>
+              <div className="bg-secondary/30 w-60 h-60 blur-3xl"></div>
+            </div>
+          </Fade>
         </div>
 
         <div className="w-5/12 relative">
-          <Fade top duration={750} delay={750} when={state.isReady}>
+          <Fade right duration={750} delay={750} when={state.isReady}>
             <img
               src="/assets/images/illustrations/illustration-main.png"
               alt=""
             />
           </Fade>
-          <Zoom duration={750} delay={500} when={state.isReady}>
+          <Fade right duration={750} delay={1500} when={state.isReady}>
             <img
               src="/assets/images/vectors/swoosh-lg.svg"
               alt=""
               className="absolute right-0 -top-10 w-[120px] z-[1]"
             />
-          </Zoom>
+          </Fade>
 
-          <Zoom duration={750} delay={1250} when={state.isReady}>
+          <Fade right duration={750} delay={1250} when={state.isReady}>
             <img
               src="/assets/images/vectors/swoosh-md.svg"
               alt=""
               className="absolute left-0 top-10 w-[80px] z-[1]"
             />
-          </Zoom>
+          </Fade>
 
-          <Zoom duration={750} delay={1000} when={state.isReady}>
+          <Fade right duration={750} delay={1750} when={state.isReady}>
             <img
               src="/assets/images/vectors/swoosh-lg.svg"
               alt=""
               className="absolute left-32 bottom-10 w-[120px] z-[1]"
             />
-          </Zoom>
+          </Fade>
         </div>
       </Section>
     </Background>
