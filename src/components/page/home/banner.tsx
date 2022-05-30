@@ -11,7 +11,6 @@ import { Fade } from 'react-reveal';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
-import Playable from '@images/services/playable.gif';
 
 const Banner = () => {
   const texts = [
@@ -19,9 +18,6 @@ const Banner = () => {
       first: 'Blockchain Built\nfor Mobile Developer',
       second:
         'Easily integrate blockchain infrastructure for your mobile application,\ndo anything with ease!',
-      // asset:
-      //   'https://derrint.sirv.com/Images/simple-duck-studios/services/playable-1.png',
-      asset: Playable,
     },
   ];
 

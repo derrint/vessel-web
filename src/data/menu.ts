@@ -1,14 +1,4 @@
-// import services from './services';
-
 const menus = [
-  // {
-  //   id: 1,
-  //   label: 'Our Services',
-  //   href: '',
-  //   submenus: services,
-  //   isDesktop: true,
-  //   isMobile: false,
-  // },
   {
     id: 2,
     label: 'Features',
