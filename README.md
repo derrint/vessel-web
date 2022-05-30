@@ -1,4 +1,4 @@
-# Simple Duck Studios Landing Page
+# Vessel Landing Page
 ### Requirements
 
 - Node.js and npm / yarn

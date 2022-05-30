@@ -2,9 +2,9 @@
   "name": "next-js-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev -p 4200",
+    "dev": "next dev -p 4101",
     "build": "next build",
-    "start": "next start -p 4200",
+    "start": "next start -p 4101",
     "build-stats": "cross-env ANALYZE=true npm run build",
     "export": "next export",
     "build-prod": "run-s clean build export",

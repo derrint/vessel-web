@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'SimpleDuck',
-  title: 'Simple Duck Studios',
-  description: 'Creative Agency',
+  site_name: 'VesselWeb',
+  title: 'Vessel',
+  description: 'Blockchain Network',
   locale: 'en',
 };
