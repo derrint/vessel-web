@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Fade, Zoom } from 'react-reveal';
+import { Fade } from 'react-reveal';
 
 import { Section } from '@components/layout';
 
-const About = () => {
+const Features = () => {
   const [state, setState] = React.useState({
     isReady: false,
   });
@@ -17,69 +17,58 @@ const About = () => {
     return () => {};
   }, []);
 
+  const features = [
+    {
+      title: 'Quick & Seamless Setup',
+      description:
+        'As easy as 1,2,3, just log into your AppLovin Dashboard and create a new app or game. Vessel have everything ready to integrate your mobile app. Create a token, mint it and integrate SDK, just a minutes away!',
+      asset: '/assets/images/illustrations/illustration-seamless.png',
+    },
+    {
+      title: 'Focus on App Design, Content & Users',
+      description:
+        'With no gas fee and easy integration, you can focus more on the essential things like design, content and your users.\nYour Vessel storefront can be tailored exactly to your project, creating a fully customizable landing page and marketplace.',
+      asset: '/assets/images/illustrations/illustration-users.png',
+    },
+    {
+      title: 'We power blockchain infrastructure for mobile applications',
+      description:
+        'Vessel app provides a production, staging and development environment. Our features will enable you to do anything in blockchain. Build an app, yes. Mint an NFT, absolutely. Buy, sell & store your items, everything on us.\n\n\nNothing like Vessel.',
+      asset: '/assets/images/illustrations/illustration-infra.png',
+    },
+  ];
+
   return (
-    <Section yPadding="py-8 sm:py-16 lg:py-32" id="about">
-      <div className="relative flex flex-col justify-center z-[1]">
-        <div>
-          <Fade left duration={750} delay={0} when={state.isReady}>
-            <div className="w-full sm:w-2/3 lg:w-1/2">
-              <h3 className="text-xl sm:text-2xl lg:text-[32px] font-bold mb-3 lg:mb-5">
-                Simple Duck is your go-to partner in creative ads
-              </h3>
+    <Section yPadding="py-8 sm:py-16" id="about">
+      <div className="relative flex flex-col justify-center z-[1] gap-40">
+        {features.map((item: any, idx: number) => (
+          <div
+            key={idx}
+            className={`flex gap-36 items-center ${
+              idx % 2 === 0 ? 'flex-row-reverse' : ''
+            }`}
+          >
+            <Fade left duration={750} delay={0} when={state.isReady}>
+              <div className="w-full sm:w-2/3 lg:w-1/2">
+                <h3 className="text-xl sm:text-2xl lg:text-5xl font-medium mb-3 lg:mb-5 tracking-tight lg:leading-[60px]">
+                  {item.title}
+                </h3>
 
-              <p className="lg:text-lg text-gray-500">
-                We produce high quality video ads, static banners and playables
-                to reach your target audience and help your business grow! We
-                design our creatives with our expertise & knowledge of mobile
-                game & app market.
-              </p>
-            </div>
-          </Fade>
-        </div>
-
-        <div className="flex justify-end mt-10 lg:mt-20">
-          <Fade right duration={750} delay={250}>
-            <div className="w-fit bg-black rounded-[32px] sm:rounded-[64px] lg:rounded-full rounded-tl-none sm:rounded-tl-none lg:rounded-tl-none px-6 sm:px-16 lg:px-20 py-4 sm:py-8 lg:py-12 flex flex-col">
-              <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold text-white mb-5">
-                <span className="block sm:inline">
-                  We&lsquo;ve helped more than{' '}
-                </span>
-                <span>100 campaigns</span>
-                <img
-                  src="https://derrint.sirv.com/Images/simple-duck-studios/home/underline-yellow.svg"
-                  alt="underline"
-                  className="absolute sm:right-16 lg:right-20 lg:pt-1 w-[145px] sm:w-[175px] lg:w-[260px]"
-                />
-                {/* <span className="inline sm:block">
-                  {' '}
-                  and drive their success
-                </span> */}
-              </h3>
-              <p className="text-lg sm:text-xl lg:text-2xl text-primary">
-                Now, it’s your turn...
-              </p>
-            </div>
-          </Fade>
-        </div>
-
-        <Zoom duration={750} delay={250} when={state.isReady}>
-          <img
-            src="https://derrint.sirv.com/Images/simple-duck-studios/home/wave-1.svg"
-            alt=""
-            className="absolute hidden sm:block right-0 lg:right-32 top-10 w-[40px] sm:w-[80px] -z-[1]"
-          />
-        </Zoom>
-
-        <Zoom duration={750} delay={500}>
-          <img
-            src="https://derrint.sirv.com/Images/simple-duck-studios/home/wave-2.svg"
-            alt=""
-            className="absolute hidden sm:block bottom-10 left-0 lg:left-40 w-[40px] sm:w-[80px] -z-[1]"
-          />
-        </Zoom>
+                <p className="text-base lg:text-lg lg:leading-7 text-black/80">
+                  {item.description}
+                </p>
+              </div>
+            </Fade>
+            <Fade left duration={750} delay={0} when={state.isReady}>
+              <div className="w-full sm:w-1/3 lg:w-1/2">
+                <img src={item.asset} alt="" className="w-full" />
+              </div>
+            </Fade>
+          </div>
+        ))}
       </div>
     </Section>
   );
 };
 
-export default About;
+export default Features;
