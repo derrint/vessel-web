@@ -14,7 +14,7 @@ module.exports = {
     //   '6xl': '4rem',
     // },
     fontFamily: {
-      sans: ['Space Grotesk'],
+      sans: ['Outfit'],
     },
     extend: {
       colors: {

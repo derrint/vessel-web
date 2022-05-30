@@ -37,7 +37,7 @@ const Header = () => {
     <Background
       color="bg-white"
       className={`fixed top-0 w-full z-10 transition-all duration-300 ${
-        state.isAnimationDone ? 'shadow-lg' : ''
+        state.isAnimationDone ? '' : ''
       }`}
     >
       <Fade top duration={750} delay={0} when={state.isReady}>
@@ -45,9 +45,9 @@ const Header = () => {
           <NavbarTwoColumns
             logo={
               <img
-                src="/assets/images/logos/logo-sds.svg"
+                src="/assets/images/logos/logo.png"
                 alt=""
-                className="h-10 md:h-12 lg:h-16 aspect-auto"
+                className="h-6 md:h-8 lg:h-10 aspect-auto"
               />
             }
           >
