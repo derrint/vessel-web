@@ -23,6 +23,12 @@ const Features = () => {
       description:
         'As easy as 1,2,3, just log into your AppLovin Dashboard and create a new app or game. Vessel have everything ready to integrate your mobile app. Create a token, mint it and integrate SDK, just a minutes away!',
       asset: '/assets/images/illustrations/illustration-seamless.png',
+      extras: [
+        {
+          label: 'Connect with',
+          asset: '/assets/images/logos/logo-applovin.png',
+        },
+      ],
     },
     {
       title: 'Focus on App Design, Content & Users',
@@ -62,6 +68,16 @@ const Features = () => {
 
                 <p className="text-base lg:text-lg lg:leading-7 text-black/80 whitespace-pre-line">
                   {item.description}
+                  {item.extras && (
+                    <div className="mt-4">
+                      {item.extras.map((extra: any, idx2: number) => (
+                        <div key={idx2} className="flex items-center gap-3">
+                          {extra.label}
+                          <img src={extra.asset} alt="" className="h-8" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </p>
               </div>
             </Fade>
