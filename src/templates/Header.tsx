@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
+import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { Fade } from 'react-reveal';
 
 import { Background } from '@components/background';
@@ -47,7 +49,7 @@ const Header = () => {
               <img
                 src="/assets/images/logos/logo.png"
                 alt=""
-                className="h-6 md:h-8 lg:h-10 aspect-auto"
+                className="h-6 md:h-8 lg:h-9 aspect-auto"
               />
             }
           >
@@ -60,6 +62,7 @@ const Header = () => {
                 isButton,
                 isDesktop,
                 isMobile,
+                isExternalLink,
               }: any) => (
                 <li
                   key={id}
@@ -79,13 +82,18 @@ const Header = () => {
                     ) : (
                       <Link href={href} passHref>
                         <a
-                          className={`text-base lg:text-lg hover:text-secondary ${
+                          className={`text-base font-medium hover:text-primary flex items-center ${
                             isButton
                               ? 'bg-primary px-4 lg:px-6 py-2 lg:py-4 rounded-full'
                               : ''
                           }`}
                         >
                           {label}
+                          {isExternalLink && (
+                            <div className="ml-2">
+                              <LinkOut strokeWidth={3} size={16} />
+                            </div>
+                          )}
                         </a>
                       </Link>
                     )}
@@ -93,6 +101,14 @@ const Header = () => {
                 </li>
               )
             )}
+            <div className="pt-1 flex items-center gap-3">
+              <div className="rounded-full p-1 bg-black text-white">
+                <FaDiscord size={14} />
+              </div>
+              <div className="rounded-full p-1 bg-black text-white">
+                <FaTwitter size={14} />
+              </div>
+            </div>
           </NavbarTwoColumns>
         </Section>
       </Fade>

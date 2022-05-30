@@ -18,10 +18,15 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#FBE54D',
-        secondary: '#0083FF',
+        primary: '#6151FF',
+        secondary: '#27E5FF',
         black: '#0D0D10',
-        // gray: '#888888',
+        gradient: {
+          primary: {
+            start: '#3D7BFF',
+            end: '#6734FF',
+          },
+        },
       },
       lineHeight: {
         hero: '4.5rem',

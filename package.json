@@ -17,6 +17,7 @@
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@tippyjs/react": "^4.2.6",
+    "akar-icons": "^1.9.17",
     "axios": "^0.26.1",
     "chart.js": "^3.7.1",
     "classnames": "^2.3.1",
