@@ -9,6 +9,7 @@ import { Section } from '@components/layout';
 
 const ContactUs = () => {
   const numOfPeople = ['1 - 50', '50 - 200', '200 - 5000', '5000+'];
+  const interest = ['qwerty', 'asdfgh', 'uiopz', 'jklxcv'];
 
   const [state, setState] = React.useState({
     isReady: false,
@@ -28,7 +29,7 @@ const ContactUs = () => {
     >
       <Section id="contact" yPadding="py-32">
         <Fade bottom duration={750} delay={500} cascade>
-          <form action="https://formspree.io/f/mayvploj" method="POST">
+          <form action="https://formspree.io/f/xeqnnpva" method="POST">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight text-center text-white">
               Build in the metaverse with{' '}
               <span className="font-bold">Vessel</span> today
@@ -111,15 +112,15 @@ const ContactUs = () => {
 
                 <div className="relative">
                   <select
-                    id="num_of_people"
-                    name="num_of_people"
+                    id="interest"
+                    name="interest"
                     className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary appearance-none"
                     required
                   >
                     <option value="" disabled selected>
                       Blockchain of interest
                     </option>
-                    {numOfPeople.map((item) => (
+                    {interest.map((item) => (
                       <option key={item} value={item}>
                         {item}
                       </option>
@@ -134,10 +135,10 @@ const ContactUs = () => {
 
               <div className="w-full max-w-screen-md mt-6">
                 <textarea
-                  name="description"
-                  id="description"
+                  name="message"
+                  id="message"
                   className="block w-full px-5 py-4 sm:text-sm rounded-2xl bg-white outline-1 outline-secondary"
-                  placeholder="We need help to...."
+                  placeholder="Any else? Let us know"
                 />
               </div>
 
