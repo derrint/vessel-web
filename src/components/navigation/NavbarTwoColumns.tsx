@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import Link from 'next/link';
 import Router from 'next/router';
+import { FiMenu } from 'react-icons/fi';
 
 import { DropdownMenu } from '@components/dropdown';
 import { menus } from '@data/index';
@@ -25,7 +26,7 @@ const NavbarTwoColumns = (props: INavbarProps) => (
       </ul>
 
       <DropdownMenu
-        title={'Menu'}
+        title={<FiMenu size={24} />}
         items={menus.filter((x) => x.isMobile)}
         onChange={(v: any) => {
           Router.push(menus.find((x) => x.id === v)?.href as any);

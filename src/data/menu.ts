@@ -1,15 +1,23 @@
 const menus = [
   {
-    id: 2,
+    id: 1,
     label: 'Features',
     href: '/#features',
     isDesktop: true,
     isMobile: true,
   },
+  // {
+  //   id: 2,
+  //   label: 'Company',
+  //   href: '/company',
+  //   isDesktop: true,
+  //   isMobile: true,
+  // },
   {
     id: 3,
-    label: 'Company',
-    href: '/company',
+    label: 'View Explorer',
+    href: 'https://mainnet-explorer.openvessel.io/dashboard',
+    isExternalLink: true,
     isDesktop: true,
     isMobile: true,
   },

@@ -11,7 +11,7 @@ type IClassNames = {
 };
 
 type IDropdownMenuProps = {
-  title: string;
+  title: any;
   items: any;
   classNames?: IClassNames;
   onChange?: any;
@@ -28,12 +28,14 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
       className={`inline-block text-left ${props.classNames?.wrapper}`}
     >
       <Menu.Button
-        className={`inline-flex gap-2 lg:gap-3 justify-between w-full text-base lg:text-lg focus:outline-none whitespace-nowrap hover:text-secondary group items-center ${props.classNames?.button}`}
+        className={`inline-flex gap-2 lg:gap-3 justify-between w-full text-base lg:text-lg focus:outline-none whitespace-nowrap hover:text-primary group items-center ${props.classNames?.button}`}
       >
         {props.title}
-        <div className="text-black group-hover:text-secondary ">
-          <FaChevronDown className="w-2 lg:w-3" />
-        </div>
+        {typeof props.title === 'string' && (
+          <div className="text-black group-hover:text-primary ">
+            <FaChevronDown className="w-2 lg:w-3" />
+          </div>
+        )}
       </Menu.Button>
       <Transition
         as={Fragment}
@@ -71,7 +73,7 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
                   {({ active }) => (
                     <button
                       className={`${
-                        active ? 'text-secondary' : 'text-black'
+                        active ? 'text-primary' : 'text-black'
                       } group flex rounded-md items-center w-full px-4 py-2 lg:py-3 text-base lg:text-lg whitespace-nowrap `}
                       onClick={() => props.onChange(item.id)}
                       onMouseEnter={() => {
