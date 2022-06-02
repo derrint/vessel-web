@@ -82,7 +82,7 @@ const Banner = () => {
             <img
               src="/assets/images/logos/logo-token.png"
               alt=""
-              className="w-[120px]"
+              className="w-[120px] shadow-md rounded-full"
             />
           </div>
         </Flip>
