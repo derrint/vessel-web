@@ -19,8 +19,8 @@ const Footer = () => {
 
   return (
     <Background color="bg-white">
-      <Section yPadding="py-20" isFooter>
-        <div className="flex flex-col justify-center items-center gap-8">
+      <Section isFooter>
+        <div className="flex flex-col justify-center items-center gap-4 sm::gap-6 lg:gap-8">
           <img
             src="/assets/images/logos/logo.png"
             alt=""

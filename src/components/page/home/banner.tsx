@@ -52,9 +52,9 @@ const Banner = () => {
 
   return (
     <Background color="bg-white" className="relative pt-20 md:pt-24 lg:pt-30">
-      <Section className="relative">
+      <Section className="relative z-[1]">
         <Fade duration={750} delay={250} when={state.isReady}>
-          <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
             {firstTexts.map((txt: any, idx: number) => {
               return (
                 <div className={styles.flipAnimate} key={idx}>
@@ -63,7 +63,9 @@ const Banner = () => {
                       [3, 4, 5].includes(idx)
                         ? 'bg-primary text-primary before:text-primary'
                         : 'bg-black text-black before:text-black'
-                    }`}
+                    }
+                    m-1 md:m-2 lg:m-3
+                    `}
                     data-hover={txt}
                   >
                     {txt}
@@ -86,10 +88,10 @@ const Banner = () => {
         </Flip>
 
         <Fade duration={3750} delay={250} when={state.isReady} cascade>
-          <div className="absolute z-[1] top-32 left-1/2">
-            <div className="relative flex -left-1/2">
-              <div className="bg-primary/30 w-60 h-60 blur-3xl"></div>
-              <div className="bg-secondary/30 w-60 h-60 blur-3xl"></div>
+          <div className="w-full flex justify-center">
+            <div className="absolute -z-[1] top-10 sm:top-16 md:top-24 lg:top-32 flex">
+              <div className="bg-primary/30 rounded-full w-32 lg:w-60 h-32 lg:h-60 blur-2xl lg:blur-3xl"></div>
+              <div className="bg-secondary/30 rounded-full w-32 lg:w-60 h-32 lg:h-60 blur-2xl lg:blur-3xl"></div>
             </div>
           </div>
         </Fade>
@@ -98,7 +100,7 @@ const Banner = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-0 top-10 w-[120px] z-[1]"
+            className="absolute right-0 top-5 sm:top-10 w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
 
@@ -106,7 +108,7 @@ const Banner = () => {
           <img
             src="/assets/images/vectors/swoosh-md.svg"
             alt=""
-            className="absolute left-0 top-32 w-[80px] z-[1]"
+            className="absolute left-0 top-32 w-14 sm:w-[80px] -z-[1]"
           />
         </Fade>
 
@@ -114,7 +116,7 @@ const Banner = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-1/4 bottom-10 w-[120px] z-[1]"
+            className="absolute right-1/4 bottom-2 sm:bottom-10 w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
       </Section>
@@ -125,7 +127,7 @@ const Banner = () => {
             <img
               src="/assets/images/illustrations/illustration-main.png"
               alt=""
-              className="w-full max-w-lg"
+              className="w-full max-w-sm sm:max-w-lg"
             />
           </div>
         </Fade>
@@ -139,7 +141,7 @@ const Banner = () => {
           <div className="mt-10 z-[2] text-center">
             <button
               className="
-                px-8 py-4 rounded-2xl
+                px-7 lg:px-8 py-3 lg:py-4 rounded-2xl
                 font-medium text-xl text-white
                 bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end
                 shadow-md

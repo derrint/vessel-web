@@ -72,13 +72,13 @@ const Features = () => {
   ];
 
   return (
-    <Section yPadding="py-8 sm:py-16" id="features">
+    <Section id="features">
       <div className="relative flex flex-col justify-center z-[1] gap-20">
         {features.map((item: any, idx: number) => (
           <div
             key={idx}
-            className={`flex gap-36 items-center ${
-              idx % 2 === 0 ? 'flex-row-reverse' : ''
+            className={`flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-20 xl:gap-36 items-center ${
+              idx % 2 === 0 ? 'sm:flex-row-reverse' : ''
             }`}
           >
             <Fade
@@ -88,8 +88,8 @@ const Features = () => {
               when={state.isReady}
               cascade
             >
-              <div className="w-full sm:w-2/3 lg:w-1/2">
-                <h3 className="text-xl sm:text-2xl lg:text-5xl font-medium mb-3 lg:mb-5 tracking-tight lg:leading-[60px]">
+              <div className="w-full sm:w-7/12 lg:w-1/2">
+                <h3 className="text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-5 tracking-tight xl:leading-[60px]">
                   {item.title}
                 </h3>
 
@@ -109,8 +109,12 @@ const Features = () => {
               </div>
             </Fade>
             <Fade bottom duration={750} delay={750} when={state.isReady}>
-              <div className="w-full sm:w-1/3 lg:w-1/2">
-                <img src={item.asset} alt="" className="w-full" />
+              <div className="w-full sm:w-5/12 lg:w-1/2 flex justify-center">
+                <img
+                  src={item.asset}
+                  alt=""
+                  className="w-full max-w-sm sm:max-w-none"
+                />
               </div>
             </Fade>
           </div>

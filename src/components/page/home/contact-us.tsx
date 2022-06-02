@@ -27,16 +27,20 @@ const ContactUs = () => {
     <Fade bottom duration={750} delay={250}>
       <Background
         color="bg-gradient-to-b from-gradient-primary-start to-gradient-primary-end"
-        className="relative"
+        className="relative z-[1]"
       >
-        <Section id="contact" yPadding="py-32">
+        <Section
+          id="contact"
+          yPadding="py-16 lg:py-24 xl:py-32"
+          className="z-[1]"
+        >
           <Fade bottom duration={750} delay={500} cascade>
             <form action="https://formspree.io/f/xeqnnpva" method="POST">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight text-center text-white">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-3 lg:mb-5 tracking-tight text-center text-white">
                 Build in the metaverse with{' '}
                 <span className="font-bold">Vessel</span> today
               </h1>
-              <p className="lg:text-lg lg:leading-7 text-white/80 whitespace-pre-line text-center mt-6">
+              <p className="lg:text-lg lg:leading-7 text-white/80 whitespace-pre-line text-center">
                 We guarantee you a response in under 24 hours.
                 <br />
                 Our API is completely free, create NFTs at zero cost.
@@ -45,7 +49,7 @@ const ContactUs = () => {
               </p>
 
               <div className="flex flex-col items-center mt-12">
-                <div className="grid grid-cols-2 gap-6 w-full max-w-screen-md">
+                <div className="flex flex-col sm:grid sm:grid-cols-2 gap-6 w-full max-w-screen-md">
                   <div className="">
                     <input
                       type="text"
@@ -147,7 +151,7 @@ const ContactUs = () => {
                 <div className="flex mt-6 justify-center sm:justify-start">
                   <button
                     type="submit"
-                    className="lg:text-xl bg-secondary px-10 py-4 rounded-2xl flex items-center gap-4 font-medium"
+                    className="lg:text-xl bg-secondary px-8 lg:px-10 py-3 lg:py-4 rounded-2xl flex items-center gap-4 font-medium"
                   >
                     Reach out
                     <IoPaperPlaneOutline size={24} />
@@ -162,7 +166,7 @@ const ContactUs = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-0 top-[30%] w-[120px] z-[1]"
+            className="absolute right-0 top-10 sm:top-[30%] w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
 
@@ -170,7 +174,7 @@ const ContactUs = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute left-[10%] top-[40%] w-[120px] z-[1]"
+            className="absolute left-0 sm:left-5 lg:left-[10%] top-5 sm:top-[20%] xl:top-[40%] w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
 
@@ -178,7 +182,7 @@ const ContactUs = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-[10%] bottom-[10%] w-[120px] z-[1]"
+            className="absolute right-[10%] bottom-5 sm:bottom-[10%] w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
       </Background>

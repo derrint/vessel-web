@@ -31,7 +31,7 @@ const Highlights = () => {
   return (
     <Fade bottom duration={750} delay={250} when={state.isReady}>
       <Background color="bg-white" className="overflow-hidden">
-        <Section yPadding="py-8 sm:py-16 lg:py-32">
+        <Section>
           <div className="flex flex-col gap-32">
             {highlights.map((item: any, idx: number) => (
               <Fade

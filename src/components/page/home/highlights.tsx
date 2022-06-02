@@ -29,15 +29,15 @@ const Highlights = () => {
   return (
     <Fade bottom duration={750} delay={250}>
       <Background color="bg-white" className="overflow-hidden">
-        <Section yPadding="py-8 sm:py-16 lg:py-32">
-          <div className="flex flex-col gap-32">
+        <Section>
+          <div className="flex flex-col gap-24 lg:gap-32">
             {highlights.map((item: any, idx: number) => (
               <div
                 key={idx}
-                className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-4"
+                className="relative flex flex-col justify-center items-center text-center gap-3 lg:gap-4"
               >
                 <Fade bottom duration={750} delay={500}>
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight">
+                  <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight">
                     {item.title}
                   </h1>
                 </Fade>
