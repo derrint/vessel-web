@@ -20,9 +20,9 @@ const Features = () => {
 
   const features = [
     {
-      title: 'Quick & Seamless Setup',
+      title: '100% Native Experience',
       description:
-        'As easy as 1,2,3, just log into your AppLovin Dashboard and create a new app or game. Vessel have everything ready to integrate your mobile app. Create a token, mint it and integrate SDK, just a minutes away!',
+        'Allow users to buy, sell, trade, and manage their NFTs, without even needing to leave your application.',
       asset: '/assets/images/illustrations/illustration-seamless.png',
       extras: [
         {
@@ -32,16 +32,42 @@ const Features = () => {
       ],
     },
     {
-      title: 'Focus on App Design, Content & Users',
+      title: "We're stacked",
       description:
-        'With no gas fee and easy integration, you can focus more on the essential things like design, content and your users.\nYour Vessel storefront can be tailored exactly to your project, creating a fully customizable landing page and marketplace.',
+        'We handle the entire blockchain stack, so you can focus on building the best games out there. Our all-in-one solution offers the following:',
       asset: '/assets/images/illustrations/illustration-users.png',
+      extras: [
+        {
+          label: 'NFT Creation/Management',
+        },
+        {
+          label: 'NFT Marketplace/Wallet App',
+        },
+        {
+          label:
+            'Onramp/Offramp Payment Processing (+200 Countries and support 25 currencies)',
+        },
+        {
+          label: 'Advance reporting and user management capabilities',
+        },
+      ],
     },
     {
       title: 'We power blockchain infrastructure for mobile applications',
       description:
-        'Vessel app provides a production, staging and development environment. Our features will enable you to do anything in blockchain. Build an app, yes. Mint an NFT, absolutely. Buy, sell & store your items, everything on us.\n\nNothing like Vessel.',
+        "We've built and designed our own blockchain, Vessel, secured by Ethereum.",
       asset: '/assets/images/illustrations/illustration-infra.png',
+      extras: [
+        {
+          label: 'Zero gas fees/cost',
+        },
+        {
+          label: 'Fast transaction speeds - finality within seconds',
+        },
+        {
+          label: 'Designed for single and bulk minting',
+        },
+      ],
     },
   ];
 

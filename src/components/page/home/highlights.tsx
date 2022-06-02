@@ -20,9 +20,9 @@ const Highlights = () => {
       },
     },
     {
-      title: 'Listing your game on Vessel, Now!',
+      title: 'Get an edge today and go live on Vessel!',
       description:
-        "The Vessel Wallet is used by consumers to discover, purchase and sell rare digital items. You'll be open up your items to a large user base of gamers, traders, and crypto enthusiasts.\nHassle free & more discoverability!",
+        "Our wallet is used by consumers to discover, purchase, sell, and trade NFTs for mobile applications. Once you've built an awesome experience using Vessel's infrastructure, you can be listed on our marketplace and gain exposure!",
       asset: '/assets/images/illustrations/illustration-listing.png',
     },
   ];
