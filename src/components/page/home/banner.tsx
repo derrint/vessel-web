@@ -6,22 +6,22 @@ import React from 'react';
 import 'tippy.js/animations/scale.css';
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
-import { Fade } from 'react-reveal';
+import { Fade, Flip } from 'react-reveal';
 // import { followCursor } from 'tippy.js';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
-const Banner = () => {
-  const texts = [
-    {
-      first: 'Blockchain Built\nfor Mobile Developer',
-      second:
-        'Easily integrate blockchain infrastructure for your mobile application,\ndo anything with ease!',
-    },
-  ];
+import styles from '../../../styles/Home.module.scss';
 
-  const text = texts[0];
+const Banner = () => {
+  const text = {
+    first: 'Your blockchain solution for mobile apps has arrived',
+    second:
+      'Easily integrate blockchain infrastructure for your mobile application,\ndo anything with ease!',
+  };
+
+  const firstTexts = text?.first.split(' ');
 
   // #endregion
 
@@ -29,26 +29,47 @@ const Banner = () => {
     isReady: false,
   });
 
+  const [arr, setArr] = React.useState([] as any);
+
   React.useEffect(() => {
     setState({ ...state, isReady: true });
 
     return () => {};
   }, []);
 
+  React.useEffect(() => {
+    if (state.isReady) {
+      firstTexts.forEach((_, idx: number) => {
+        setTimeout(() => {
+          setArr((oldArray: any) => oldArray.concat(styles.showed));
+        }, 400 * (idx + 1));
+      });
+    }
+
+    return () => {};
+  }, [state.isReady]);
+
   return (
     <Background color="bg-white" className="relative py-20 md:py-24 lg:py-30">
       <Section className="flex gap-10">
         <div className="w-7/12 flex flex-col justify-center py-6 relative">
-          <Fade top duration={750} delay={500} when={state.isReady}>
-            <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2]">
-              {text?.first}
-            </h1>
-          </Fade>
-          <Fade top duration={750} delay={750} when={state.isReady}>
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2]">
+            {firstTexts.map((txt: any, idx: number) => {
+              return (
+                <div className={styles.flipAnimate} key={idx}>
+                  <span className={arr[idx] || ''} data-hover={txt}>
+                    {txt}
+                  </span>
+                </div>
+              );
+            })}
+          </h1>
+
+          <Flip top duration={1750} delay={750} when={state.isReady}>
             <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2]">
               {text?.second}
             </p>
-          </Fade>
+          </Flip>
           <Fade top duration={750} delay={1000} when={state.isReady}>
             <div className="mt-10 z-[2]">
               <button
