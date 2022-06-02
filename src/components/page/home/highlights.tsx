@@ -32,15 +32,22 @@ const Highlights = () => {
         <Section yPadding="py-8 sm:py-16 lg:py-32">
           <div className="flex flex-col gap-32">
             {highlights.map((item: any, idx: number) => (
-              <Fade bottom duration={750} delay={500} cascade key={idx}>
-                <div className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-4">
+              <div
+                key={idx}
+                className="relative flex flex-col justify-center items-center text-center gap-1 lg:gap-4"
+              >
+                <Fade bottom duration={750} delay={500}>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:leading-[60px] font-medium mb-0 tracking-tight">
                     {item.title}
                   </h1>
+                </Fade>
+                <Fade bottom duration={750} delay={750}>
                   <p className="lg:text-lg lg:w-2/3 lg:leading-7 text-black/80 whitespace-pre-line">
                     {item.description}
                   </p>
+                </Fade>
 
+                <Fade bottom duration={750} delay={1000}>
                   <div className="mt-8 flex flex-col items-center gap-8">
                     <img
                       src={item.asset}
@@ -64,8 +71,8 @@ const Highlights = () => {
                       </Link>
                     )}
                   </div>
-                </div>
-              </Fade>
+                </Fade>
+              </div>
             ))}
           </div>
         </Section>

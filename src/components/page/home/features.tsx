@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import { Fade } from 'react-reveal';
@@ -46,7 +47,7 @@ const Features = () => {
 
   return (
     <Section yPadding="py-8 sm:py-16" id="features">
-      <div className="relative flex flex-col justify-center z-[1] gap-40">
+      <div className="relative flex flex-col justify-center z-[1] gap-20">
         {features.map((item: any, idx: number) => (
           <div
             key={idx}
@@ -55,9 +56,9 @@ const Features = () => {
             }`}
           >
             <Fade
-              left
+              bottom
               duration={750}
-              delay={150 * (idx + 1)}
+              delay={500}
               when={state.isReady}
               cascade
             >
@@ -81,7 +82,7 @@ const Features = () => {
                 </p>
               </div>
             </Fade>
-            <Fade right duration={750} delay={0} when={state.isReady}>
+            <Fade bottom duration={750} delay={750} when={state.isReady}>
               <div className="w-full sm:w-1/3 lg:w-1/2">
                 <img src={item.asset} alt="" className="w-full" />
               </div>

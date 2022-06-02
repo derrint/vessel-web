@@ -17,8 +17,7 @@ import styles from '../../../styles/Home.module.scss';
 const Banner = () => {
   const text = {
     first: 'Your blockchain solution for mobile apps has arrived',
-    second:
-      'Easily integrate blockchain infrastructure for your mobile application,\ndo anything with ease!',
+    second: 'Integrate NFTs in your mobile apps, without any of the hassle.',
   };
 
   const firstTexts = text?.first.split(' ');
@@ -39,109 +38,135 @@ const Banner = () => {
 
   React.useEffect(() => {
     if (state.isReady) {
-      firstTexts.forEach((_, idx: number) => {
-        setTimeout(() => {
-          setArr((oldArray: any) => oldArray.concat(styles.showed));
-        }, 400 * (idx + 1));
-      });
+      setTimeout(() => {
+        firstTexts.forEach((_, idx: number) => {
+          setTimeout(() => {
+            setArr((oldArray: any) => oldArray.concat(styles.showed));
+          }, 250 * (idx + 1));
+        });
+      }, 500);
     }
 
     return () => {};
   }, [state.isReady]);
 
   return (
-    <Background color="bg-white" className="relative py-20 md:py-24 lg:py-30">
-      <Section className="flex gap-10">
-        <div className="w-7/12 flex flex-col justify-center py-6 relative">
-          <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2]">
+    <Background color="bg-white" className="relative pt-20 md:pt-24 lg:pt-30">
+      <Section className="relative">
+        <Fade duration={750} delay={250} when={state.isReady}>
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
             {firstTexts.map((txt: any, idx: number) => {
               return (
                 <div className={styles.flipAnimate} key={idx}>
-                  <span className={arr[idx] || ''} data-hover={txt}>
+                  <span
+                    className={`${arr[idx] || ''} ${
+                      [3, 4, 5].includes(idx)
+                        ? 'bg-primary text-primary before:text-primary'
+                        : 'bg-black text-black before:text-black'
+                    }`}
+                    data-hover={txt}
+                  >
                     {txt}
                   </span>
+                  {idx === 2 || idx === 5 ? <br /> : null}
                 </div>
               );
             })}
           </h1>
+        </Fade>
 
-          <Flip top duration={1750} delay={750} when={state.isReady}>
-            <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2]">
-              {text?.second}
-            </p>
-          </Flip>
-          <Fade top duration={750} delay={1000} when={state.isReady}>
-            <div className="mt-10 z-[2]">
-              <button
-                className="
+        <Flip right duration={750} delay={3000} when={state.isReady}>
+          <div className="flex justify-center mt-12">
+            <img
+              src="/assets/images/logos/logo-token.png"
+              alt=""
+              className="w-[120px]"
+            />
+          </div>
+        </Flip>
+
+        <Fade duration={3750} delay={250} when={state.isReady} cascade>
+          <div className="absolute z-[1] top-32 left-1/2">
+            <div className="relative flex -left-1/2">
+              <div className="bg-primary/30 w-60 h-60 blur-3xl"></div>
+              <div className="bg-secondary/30 w-60 h-60 blur-3xl"></div>
+            </div>
+          </div>
+        </Fade>
+
+        <Fade right duration={750} delay={2500} when={state.isReady}>
+          <img
+            src="/assets/images/vectors/swoosh-lg.svg"
+            alt=""
+            className="absolute right-0 top-10 w-[120px] z-[1]"
+          />
+        </Fade>
+
+        <Fade right duration={750} delay={2250} when={state.isReady}>
+          <img
+            src="/assets/images/vectors/swoosh-md.svg"
+            alt=""
+            className="absolute left-0 top-32 w-[80px] z-[1]"
+          />
+        </Fade>
+
+        <Fade right duration={750} delay={1750} when={state.isReady}>
+          <img
+            src="/assets/images/vectors/swoosh-lg.svg"
+            alt=""
+            className="absolute right-1/4 bottom-10 w-[120px] z-[1]"
+          />
+        </Fade>
+      </Section>
+
+      <Section className="relative">
+        <Fade duration={750} delay={3250} when={state.isReady}>
+          <div className="flex justify-center">
+            <img
+              src="/assets/images/illustrations/illustration-main.png"
+              alt=""
+              className="w-full max-w-lg"
+            />
+          </div>
+        </Fade>
+
+        <Fade bottom duration={750} delay={500} when={state.isReady}>
+          <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2] text-center">
+            {text?.second}
+          </p>
+        </Fade>
+        <Fade bottom duration={750} delay={750} when={state.isReady}>
+          <div className="mt-10 z-[2] text-center">
+            <button
+              className="
                 px-8 py-4 rounded-2xl
                 font-medium text-xl text-white
                 bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end
                 shadow-md
                 "
-              >
-                Get started now ⚡
-              </button>
-            </div>
-          </Fade>
+            >
+              Get started now ⚡
+            </button>
+          </div>
+        </Fade>
 
-          <Fade top duration={750} delay={1250} when={state.isReady}>
-            <div className="mt-8 z-[2]">
-              <Link
-                href={
-                  'https://docs.openvessel.io/integration/EZzgG67O9oXGl9CReheF/'
-                }
-                passHref
-              >
-                <a className="flex items-center text-primary" target="_blank">
-                  Explore Documentation
-                  <div className="ml-2">
-                    <LinkOut strokeWidth={3} size={16} />
-                  </div>
-                </a>
-              </Link>
-            </div>
-          </Fade>
-
-          <Fade duration={750} delay={2250} when={state.isReady}>
-            <div className="flex absolute z-[1] top-0 left-32">
-              <div className="bg-primary/30 w-60 h-60 blur-3xl"></div>
-              <div className="bg-secondary/30 w-60 h-60 blur-3xl"></div>
-            </div>
-          </Fade>
-        </div>
-
-        <div className="w-5/12 relative">
-          <Fade right duration={750} delay={750} when={state.isReady}>
-            <img
-              src="/assets/images/illustrations/illustration-main.png"
-              alt=""
-            />
-          </Fade>
-          <Fade right duration={750} delay={1500} when={state.isReady}>
-            <img
-              src="/assets/images/vectors/swoosh-lg.svg"
-              alt=""
-              className="absolute right-0 -top-10 w-[120px] z-[1]"
-            />
-          </Fade>
-
-          <Fade right duration={750} delay={1250} when={state.isReady}>
-            <img
-              src="/assets/images/vectors/swoosh-md.svg"
-              alt=""
-              className="absolute left-0 top-10 w-[80px] z-[1]"
-            />
-          </Fade>
-
-          <Fade right duration={750} delay={1750} when={state.isReady}>
-            <img
-              src="/assets/images/vectors/swoosh-lg.svg"
-              alt=""
-              className="absolute left-32 bottom-10 w-[120px] z-[1]"
-            />
-          </Fade>
-        </div>
+        <Fade bottom duration={750} delay={1000} when={state.isReady}>
+          <div className="mt-8 z-[2] flex justify-center">
+            <Link
+              href={
+                'https://docs.openvessel.io/integration/EZzgG67O9oXGl9CReheF/'
+              }
+              passHref
+            >
+              <a className="flex items-center text-primary" target="_blank">
+                Explore Documentation
+                <div className="ml-2">
+                  <LinkOut strokeWidth={3} size={16} />
+                </div>
+              </a>
+            </Link>
+          </div>
+        </Fade>
       </Section>
     </Background>
   );

@@ -2,6 +2,7 @@
   perspective: 500px;
   perspective-origin: 0 50% -50%;
   display: inline;
+  z-index: 3;
   
   span {
     position: relative;
@@ -10,10 +11,11 @@
     transition: transform 0.2s;
     transform-origin: 50% 0;
     transform-style: preserve-3d;
-    background: #6151FF;
-    color: #6151FF;
+    // background: #6151FF;
+    // color: #6151FF;
     border-radius: 8px;
     margin: 10px 10px;
+    z-index: 3;
   }
   
   span:before {
@@ -27,6 +29,7 @@
     transform: rotateX(-90deg);
     transform-origin: 50% 0;
     text-align: center;
+    z-index: 3;
   }
   
   span.showed {
@@ -34,6 +37,6 @@
   }
   
  span.showed:before {
-    color: #6151FF;
+    // color: #6151FF;
   } 
 }
