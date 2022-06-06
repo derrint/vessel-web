@@ -44,38 +44,46 @@ const Banner = () => {
             setArr((oldArray: any) => oldArray.concat(styles.showed));
           }, 250 * (idx + 1));
         });
-      }, 500);
+
+        document.querySelector('body')?.classList.remove('overflow-hidden');
+      }, 2250);
     }
 
     return () => {};
   }, [state.isReady]);
 
   return (
-    <Background color="bg-white" className="relative pt-20 md:pt-24 lg:pt-30">
+    <Background color="bg-white" className="pt-20 md:pt-24 lg:pt-30">
+      <div className={styles.splashScreen}>
+        <img
+          src="/assets/images/logos/logo-icon-w.png"
+          alt=""
+          className="w-24"
+        />
+      </div>
+
       <Section className="relative z-[1]">
-        <Fade duration={750} delay={250} when={state.isReady}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
-            {firstTexts.map((txt: any, idx: number) => {
-              return (
-                <div className={styles.flipAnimate} key={idx}>
-                  <span
-                    className={`${arr[idx] || ''} ${
-                      [3, 4, 5].includes(idx)
-                        ? 'bg-primary text-primary before:text-primary'
-                        : 'bg-black text-black before:text-black'
-                    }
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
+          {firstTexts.map((txt: any, idx: number) => {
+            return (
+              <div className={styles.flipAnimate} key={idx}>
+                <span
+                  className={`${arr[idx] || ''} ${
+                    [3, 4, 5].includes(idx)
+                      ? 'bg-primary text-primary before:text-primary'
+                      : 'bg-black text-black before:text-black'
+                  }
                     m-1 md:m-2 lg:m-3
                     `}
-                    data-hover={txt}
-                  >
-                    {txt}
-                  </span>
-                  {idx === 2 || idx === 5 ? <br /> : null}
-                </div>
-              );
-            })}
-          </h1>
-        </Fade>
+                  data-hover={txt}
+                >
+                  {txt}
+                </span>
+                {idx === 2 || idx === 5 ? <br /> : null}
+              </div>
+            );
+          })}
+        </h1>
 
         <Flip right duration={750} delay={3000} when={state.isReady}>
           <div className="flex justify-center mt-12">
@@ -139,14 +147,7 @@ const Banner = () => {
         </Fade>
         <Fade bottom duration={750} delay={750} when={state.isReady}>
           <div className="mt-10 z-[2] text-center">
-            <button
-              className="
-                px-7 lg:px-8 py-3 lg:py-4 rounded-2xl
-                font-medium text-xl text-white
-                bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end
-                shadow-md
-                "
-            >
+            <button className="px-7 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium text-xl text-white bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end shadow-md">
               Get started now ⚡
             </button>
           </div>
