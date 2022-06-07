@@ -6,13 +6,13 @@ import React from 'react';
 import 'tippy.js/animations/scale.css';
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
-import { Fade, Flip } from 'react-reveal';
+import { Fade, Flip, Zoom } from 'react-reveal';
 // import { followCursor } from 'tippy.js';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
-import styles from '../../../styles/Home.module.scss';
+import styles from '../../../styles/components/page/home/banner.module.scss';
 
 const Banner = () => {
   const text = {
@@ -129,14 +129,75 @@ const Banner = () => {
         </Fade>
       </Section>
 
-      <Section className="relative">
-        <Fade duration={750} delay={3250} when={state.isReady}>
+      <Section className={`relative ${styles.main}`}>
+        <Fade duration={750} delay={250} when={state.isReady}>
           <div className="flex justify-center">
-            <img
-              src="/assets/images/illustrations/illustration-main.png"
-              alt=""
-              className="w-full max-w-sm sm:max-w-lg"
-            />
+            <div className="relative">
+              <img
+                src="/assets/images/illustrations/illustration-main-bg.png"
+                alt=""
+                className="w-full max-w-sm sm:max-w-lg"
+              />
+              <Zoom when={state.isReady} duration={500} delay={1000}>
+                <div className={styles.card_top}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-wallet.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+
+              <Zoom when={state.isReady} duration={500} delay={1000}>
+                <div className={styles.card_top_right}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-game.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+
+              <Zoom when={state.isReady} duration={500} delay={1250}>
+                <div className={styles.card_left}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-cloud.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+
+              <Zoom when={state.isReady} duration={500} delay={1500}>
+                <div className={styles.card_right_1}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-coin-1.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+
+              <Zoom when={state.isReady} duration={500} delay={1500}>
+                <div className={styles.card_right_2}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-coin-2.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+
+              <Zoom when={state.isReady} duration={500} delay={1750}>
+                <div className={styles.card_bottom_left}>
+                  <img
+                    className={styles.floating}
+                    src="/assets/images/illustrations/illustration-main-coin-3.png"
+                    alt=""
+                  />
+                </div>
+              </Zoom>
+            </div>
           </div>
         </Fade>
 
