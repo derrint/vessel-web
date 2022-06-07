@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
+import { ArrowRight } from 'akar-icons';
 import { Fade } from 'react-reveal';
 
 import { Section } from '@components/layout';
@@ -20,9 +21,9 @@ const Features = () => {
 
   const features = [
     {
-      title: '100% Native Experience',
+      title: 'Seamless Experience',
       description:
-        'Allow users to buy, sell, trade, and manage their NFTs, without even needing to leave your application.',
+        'Allow users to buy, sell, trade, and manage their NFTs, without even needing to leave your application',
       asset: '/assets/images/illustrations/illustration-seamless.png',
       extras: [
         {
@@ -98,7 +99,12 @@ const Features = () => {
                   {item.extras && (
                     <div className="mt-4">
                       {item.extras.map((extra: any, idx2: number) => (
-                        <div key={idx2} className="flex items-center gap-3">
+                        <div key={idx2} className="flex items-start gap-3">
+                          {item.extras.length > 1 && (
+                            <div className="my-[6px] text-primary">
+                              <ArrowRight strokeWidth={3} size={16} />
+                            </div>
+                          )}
                           {extra.label}
                           <img src={extra.asset} alt="" className="h-8" />
                         </div>
