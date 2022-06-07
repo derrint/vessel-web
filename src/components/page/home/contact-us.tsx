@@ -35,7 +35,7 @@ const ContactUs = () => {
           className="z-[1]"
         >
           <Fade bottom duration={750} delay={500} cascade>
-            <form action="https://formspree.io/f/xeqnnpva" method="POST">
+            <form action="https://formspree.io/f/mwkyzpjq" method="POST">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-3 lg:mb-5 tracking-tight text-center text-white">
                 Bring NFTs to your mobile games with{' '}
                 <span className="font-bold">Vessel</span> today
