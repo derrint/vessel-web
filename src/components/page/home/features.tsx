@@ -2,7 +2,8 @@
 import React from 'react';
 
 import { ArrowRight } from 'akar-icons';
-import { Fade } from 'react-reveal';
+import { Fade, Flip } from 'react-reveal';
+import Pulse from 'react-reveal/Pulse';
 
 import { Section } from '@components/layout';
 
@@ -19,12 +20,61 @@ const Features = () => {
     return () => {};
   }, []);
 
+  const featureSeamless = () => {
+    return (
+      <div className="relative">
+        <img
+          src="/assets/images/illustrations/illustration-seamless-bg.svg"
+          alt=""
+          className="w-[360px]"
+        />
+
+        <div className="absolute -top-14 -left-14">
+          <Pulse forever delay={0} duration={1500}>
+            <Flip when={state.isReady} duration={500} delay={1000}>
+              <img
+                className="w-[240px]"
+                src="/assets/images/illustrations/illustration-seamless-1.png"
+                alt=""
+              />
+            </Flip>
+          </Pulse>
+        </div>
+
+        <div className="absolute top-9 right-8">
+          <Pulse forever delay={200} duration={1500}>
+            <Flip when={state.isReady} duration={500} delay={1250}>
+              <img
+                className="w-[200px]"
+                src="/assets/images/illustrations/illustration-seamless-2.png"
+                alt=""
+              />
+            </Flip>
+          </Pulse>
+        </div>
+
+        <div className="absolute bottom-2 -right-10">
+          <Pulse forever delay={400} duration={1500}>
+            <Flip when={state.isReady} duration={500} delay={1500}>
+              <img
+                className="w-[200px]"
+                src="/assets/images/illustrations/illustration-seamless-3.png"
+                alt=""
+              />
+            </Flip>
+          </Pulse>
+        </div>
+      </div>
+    );
+  };
+
   const features = [
     {
       title: 'Seamless Experience',
       description:
         'Allow users to buy, sell, trade, and manage their NFTs, without even needing to leave your application',
       asset: '/assets/images/illustrations/illustration-seamless.png',
+      component: featureSeamless(),
       extras: [
         {
           label: 'Connect with',
@@ -116,11 +166,15 @@ const Features = () => {
             </Fade>
             <Fade bottom duration={750} delay={750} when={state.isReady}>
               <div className="w-full sm:w-5/12 lg:w-1/2 flex justify-center">
-                <img
-                  src={item.asset}
-                  alt=""
-                  className="w-full max-w-sm sm:max-w-none"
-                />
+                {item.component ? (
+                  item.component
+                ) : (
+                  <img
+                    src={item.asset}
+                    alt=""
+                    className="w-full max-w-sm sm:max-w-none"
+                  />
+                )}
               </div>
             </Fade>
           </div>
