@@ -8,6 +8,51 @@ import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
 const Highlights = () => {
+  const cards = [
+    {
+      asset: '/assets/images/illustrations/illustration-live-app-1.png',
+      className: 'w-[25%] hover:w-[30%] -mr-[1%]',
+    },
+    {
+      asset: '/assets/images/illustrations/illustration-live-app-2.png',
+      className: 'w-[35%] hover:w-[40%] mb-[5%] -mx-[1%]',
+    },
+    {
+      asset: '/assets/images/illustrations/illustration-live-app-3.png',
+      className: 'w-[30%] hover:w-[35%] mt-[10%] -mx-[1%]',
+    },
+    {
+      asset: '/assets/images/illustrations/illustration-live-app-4.png',
+      className: 'w-[20%] hover:w-[25%] mb-[20%] -ml-[1%]',
+    },
+  ];
+
+  const highlightLive = () => {
+    return (
+      <div className="relative flex flex-col items-center justify-center gap-5 mt-5">
+        <Fade duration={500} delay={750}>
+          <img
+            src="/assets/images/illustrations/illustration-live-bg.svg"
+            alt=""
+            className="w-full max-w-3xl"
+          />
+        </Fade>
+
+        <div className="flex items-center justify-center gap-0 absolute">
+          {cards.map((item, idx) => (
+            <Fade key={idx} duration={500} bottom delay={1000 + idx * 150}>
+              <img
+                src={item.asset}
+                className={`${item.className} transition-all duration-300 `}
+                alt=""
+              />
+            </Fade>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   const highlights = [
     {
       title: 'Seamless and Intuitive Vessel SDK',
@@ -23,9 +68,11 @@ const Highlights = () => {
       title: 'Get an edge today and go live on Vessel!',
       description:
         "Our wallet is used by consumers to discover, purchase, sell, and trade NFTs for mobile applications. Once you've built an awesome experience using Vessel's infrastructure, you can be listed on our marketplace and gain exposure!",
-      asset: '/assets/images/illustrations/illustration-listing.png',
+      asset: '/assets/images/illustrations/illustration-live.png',
+      component: highlightLive(),
     },
   ];
+
   return (
     <Fade bottom duration={750} delay={250}>
       <Background color="bg-white" className="overflow-hidden">
@@ -49,11 +96,15 @@ const Highlights = () => {
 
                 <Fade bottom duration={750} delay={1000}>
                   <div className="mt-8 flex flex-col items-center gap-8">
-                    <img
-                      src={item.asset}
-                      alt=""
-                      className="w-full max-w-3xl aspect-auto"
-                    />
+                    {item.component ? (
+                      item.component
+                    ) : (
+                      <img
+                        src={item.asset}
+                        alt=""
+                        className="w-full max-w-3xl aspect-auto"
+                      />
+                    )}
 
                     {item.link && (
                       <Link href={item.link.href} passHref>
