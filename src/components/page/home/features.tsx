@@ -149,7 +149,7 @@ const Features = () => {
       title: "We're stacked",
       description:
         'We handle the entire blockchain stack, so you can focus on building the best apps out there. Our all-in-one solution offers the following:',
-      asset: '/assets/images/illustrations/illustration-users.png',
+      asset: '/assets/images/illustrations/illustration-stacked.png',
       component: featureStacked(),
       extras: [
         {
