@@ -26,6 +26,7 @@ const Banner = () => {
 
   const [state, setState] = React.useState({
     isReady: false,
+    isSplashScreenDone: false,
   });
 
   const [arr, setArr] = React.useState([] as any);
@@ -46,7 +47,8 @@ const Banner = () => {
         });
 
         document.querySelector('body')?.classList.remove('overflow-hidden');
-      }, 2250);
+        setState({ ...state, isSplashScreenDone: true });
+      }, 1250);
     }
 
     return () => {};
@@ -85,7 +87,12 @@ const Banner = () => {
           })}
         </h1>
 
-        <Flip right duration={750} delay={3000} when={state.isReady}>
+        <Flip
+          right
+          duration={750}
+          delay={250}
+          when={state.isReady && state.isSplashScreenDone}
+        >
           <div className="flex justify-center mt-12">
             <img
               src="/assets/images/logos/logo-token.png"
@@ -95,7 +102,12 @@ const Banner = () => {
           </div>
         </Flip>
 
-        <Fade duration={3750} delay={250} when={state.isReady} cascade>
+        <Fade
+          duration={3750}
+          delay={250}
+          when={state.isReady && state.isSplashScreenDone}
+          cascade
+        >
           <div className="w-full flex justify-center">
             <div className="absolute -z-[1] top-10 sm:top-16 md:top-24 lg:top-32 flex">
               <div className="bg-primary/30 rounded-full w-32 lg:w-60 h-32 lg:h-60 blur-2xl lg:blur-3xl"></div>
@@ -104,7 +116,12 @@ const Banner = () => {
           </div>
         </Fade>
 
-        <Fade right duration={750} delay={2500} when={state.isReady}>
+        <Fade
+          right
+          duration={750}
+          delay={1500}
+          when={state.isReady && state.isSplashScreenDone}
+        >
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
@@ -112,7 +129,12 @@ const Banner = () => {
           />
         </Fade>
 
-        <Fade right duration={750} delay={2250} when={state.isReady}>
+        <Fade
+          right
+          duration={750}
+          delay={1250}
+          when={state.isReady && state.isSplashScreenDone}
+        >
           <img
             src="/assets/images/vectors/swoosh-md.svg"
             alt=""
@@ -120,7 +142,12 @@ const Banner = () => {
           />
         </Fade>
 
-        <Fade right duration={750} delay={1750} when={state.isReady}>
+        <Fade
+          right
+          duration={750}
+          delay={750}
+          when={state.isReady && state.isSplashScreenDone}
+        >
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
@@ -130,7 +157,11 @@ const Banner = () => {
       </Section>
 
       <Section className={`relative ${styles.main}`}>
-        <Fade duration={750} delay={250} when={state.isReady}>
+        <Fade
+          duration={750}
+          delay={0}
+          when={state.isReady && state.isSplashScreenDone}
+        >
           <div className="flex justify-center">
             <div className="relative">
               <img
@@ -138,7 +169,8 @@ const Banner = () => {
                 alt=""
                 className="w-full max-w-sm sm:max-w-lg"
               />
-              <Zoom when={state.isReady} duration={500} delay={1000}>
+
+              <Zoom when={state.isReady} duration={500} delay={500}>
                 <div className={styles.card_top}>
                   <img
                     className={styles.floating}
@@ -148,7 +180,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1000}>
+              <Zoom when={state.isReady} duration={500} delay={500}>
                 <div className={styles.card_top_right}>
                   <img
                     className={styles.floating}
@@ -158,7 +190,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1250}>
+              <Zoom when={state.isReady} duration={500} delay={750}>
                 <div className={styles.card_left}>
                   <img
                     className={styles.floating}
@@ -168,7 +200,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1500}>
+              <Zoom when={state.isReady} duration={500} delay={1000}>
                 <div className={styles.card_right_1}>
                   <img
                     className={styles.floating}
@@ -178,7 +210,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1500}>
+              <Zoom when={state.isReady} duration={500} delay={1000}>
                 <div className={styles.card_right_2}>
                   <img
                     className={styles.floating}
@@ -188,7 +220,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1750}>
+              <Zoom when={state.isReady} duration={500} delay={1250}>
                 <div className={styles.card_bottom_left}>
                   <img
                     className={styles.floating}
@@ -201,12 +233,12 @@ const Banner = () => {
           </div>
         </Fade>
 
-        <Fade bottom duration={750} delay={500} when={state.isReady}>
+        <Fade bottom duration={750} delay={250} when={state.isReady}>
           <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2] text-center">
             {text?.second}
           </p>
         </Fade>
-        <Fade bottom duration={750} delay={750} when={state.isReady}>
+        <Fade bottom duration={750} delay={250} when={state.isReady}>
           <div className="mt-10 z-[2] text-center">
             <Link href="/#contact" passHref>
               <button className="px-7 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium text-xl text-white bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end shadow-md">
@@ -216,7 +248,7 @@ const Banner = () => {
           </div>
         </Fade>
 
-        <Fade bottom duration={750} delay={1000} when={state.isReady}>
+        <Fade bottom duration={750} delay={250} when={state.isReady}>
           <div className="mt-8 z-[2] flex justify-center">
             <Link
               href={
