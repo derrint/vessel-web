@@ -211,7 +211,7 @@ end`}
   const highlightLive = () => {
     return (
       <div className="relative flex flex-col items-center justify-center gap-5 mt-5">
-        <Fade duration={500} delay={750}>
+        <Fade duration={500} delay={250}>
           <img
             src="/assets/images/illustrations/illustration-live-bg.svg"
             alt=""
@@ -221,7 +221,7 @@ end`}
 
         <div className="flex items-center justify-center gap-0 absolute">
           {cards.map((item, idx) => (
-            <Fade key={idx} duration={500} bottom delay={1000 + idx * 150}>
+            <Fade key={idx} duration={500} bottom delay={500 + idx * 150}>
               <img
                 src={item.asset}
                 className={`${item.className} transition-all duration-300 `}
@@ -256,61 +256,59 @@ end`}
   ];
 
   return (
-    <Fade bottom duration={750} delay={250}>
-      <Background color="bg-white" className="overflow-hidden">
-        <Section>
-          <div className="flex flex-col gap-24">
-            {highlights.map((item: any, idx: number) => (
-              <div
-                key={idx}
-                className="relative flex flex-col justify-center items-center text-center gap-3 lg:gap-4"
-              >
-                <Fade bottom duration={750} delay={500}>
-                  <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight">
-                    {item.title}
-                  </h1>
-                </Fade>
-                <Fade bottom duration={750} delay={750}>
-                  <p className="lg:text-lg lg:w-2/3 lg:leading-7 text-black/80 whitespace-pre-line">
-                    {item.description}
-                  </p>
-                </Fade>
+    <Background color="bg-white" className="overflow-hidden">
+      <Section>
+        <div className="flex flex-col gap-24">
+          {highlights.map((item: any, idx: number) => (
+            <div
+              key={idx}
+              className="relative flex flex-col justify-center items-center text-center gap-3 lg:gap-4"
+            >
+              <Fade bottom duration={750} delay={250}>
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight">
+                  {item.title}
+                </h1>
+              </Fade>
+              <Fade bottom duration={750} delay={250}>
+                <p className="lg:text-lg lg:w-2/3 lg:leading-7 text-black/80 whitespace-pre-line">
+                  {item.description}
+                </p>
+              </Fade>
 
-                <Fade bottom duration={750} delay={1000}>
-                  <div className="mt-8 flex flex-col items-center gap-8">
-                    {item.component ? (
-                      item.component
-                    ) : (
-                      <img
-                        src={item.asset}
-                        alt=""
-                        className="w-full max-w-3xl aspect-auto"
-                      />
-                    )}
+              <Fade bottom duration={750} delay={250}>
+                <div className="mt-8 flex flex-col items-center gap-8">
+                  {item.component ? (
+                    item.component
+                  ) : (
+                    <img
+                      src={item.asset}
+                      alt=""
+                      className="w-full max-w-3xl aspect-auto"
+                    />
+                  )}
 
-                    {item.link && (
-                      <Link href={item.link.href} passHref>
-                        <a
-                          className="flex items-center text-primary"
-                          target="_blank"
-                        >
-                          {item.link.label}
-                          {item.link.isExternal && (
-                            <div className="ml-2">
-                              <LinkOut strokeWidth={3} size={16} />
-                            </div>
-                          )}
-                        </a>
-                      </Link>
-                    )}
-                  </div>
-                </Fade>
-              </div>
-            ))}
-          </div>
-        </Section>
-      </Background>
-    </Fade>
+                  {item.link && (
+                    <Link href={item.link.href} passHref>
+                      <a
+                        className="flex items-center text-primary"
+                        target="_blank"
+                      >
+                        {item.link.label}
+                        {item.link.isExternal && (
+                          <div className="ml-2">
+                            <LinkOut strokeWidth={3} size={16} />
+                          </div>
+                        )}
+                      </a>
+                    </Link>
+                  )}
+                </div>
+              </Fade>
+            </div>
+          ))}
+        </div>
+      </Section>
+    </Background>
   );
 };
 

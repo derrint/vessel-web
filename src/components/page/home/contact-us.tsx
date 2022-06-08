@@ -24,7 +24,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <Fade bottom duration={750} delay={250}>
+    <Fade bottom duration={750} delay={0}>
       <Background
         color="bg-gradient-to-b from-gradient-primary-start to-gradient-primary-end"
         className="relative z-[1]"
@@ -34,7 +34,7 @@ const ContactUs = () => {
           yPadding="py-16 lg:py-24 xl:py-32"
           className="z-[1]"
         >
-          <Fade bottom duration={750} delay={500} cascade>
+          <Fade bottom duration={750} delay={250} cascade>
             <form action="https://formspree.io/f/mwkyzpjq" method="POST">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-3 lg:mb-5 tracking-tight text-center text-white">
                 Bring NFTs to your mobile games with{' '}
@@ -162,7 +162,7 @@ const ContactUs = () => {
           </Fade>
         </Section>
 
-        <Fade right duration={750} delay={1500} when={state.isReady}>
+        <Fade right duration={750} delay={500} when={state.isReady}>
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
@@ -170,7 +170,7 @@ const ContactUs = () => {
           />
         </Fade>
 
-        <Fade right duration={750} delay={1250} when={state.isReady}>
+        <Fade right duration={750} delay={250} when={state.isReady}>
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
@@ -178,7 +178,7 @@ const ContactUs = () => {
           />
         </Fade>
 
-        <Fade right duration={750} delay={1750} when={state.isReady}>
+        <Fade right duration={750} delay={750} when={state.isReady}>
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { ArrowRight } from 'akar-icons';
-import { Fade, Flip, Zoom } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 import Pulse from 'react-reveal/Pulse';
 
 import { Section } from '@components/layout';
@@ -33,37 +33,31 @@ const Features = () => {
 
         <div className="absolute -top-14 -left-14">
           <Pulse forever delay={0} duration={1500}>
-            <Flip when={state.isReady} duration={500} delay={1000}>
-              <img
-                className="w-[240px]"
-                src="/assets/images/illustrations/illustration-seamless-1.png"
-                alt=""
-              />
-            </Flip>
+            <img
+              className="w-[240px]"
+              src="/assets/images/illustrations/illustration-seamless-1.png"
+              alt=""
+            />
           </Pulse>
         </div>
 
         <div className="absolute top-9 right-8">
-          <Pulse forever delay={200} duration={1500}>
-            <Flip when={state.isReady} duration={500} delay={1250}>
-              <img
-                className="w-[200px]"
-                src="/assets/images/illustrations/illustration-seamless-2.png"
-                alt=""
-              />
-            </Flip>
+          <Pulse forever delay={100} duration={1500}>
+            <img
+              className="w-[200px]"
+              src="/assets/images/illustrations/illustration-seamless-2.png"
+              alt=""
+            />
           </Pulse>
         </div>
 
         <div className="absolute bottom-2 -right-10">
-          <Pulse forever delay={400} duration={1500}>
-            <Flip when={state.isReady} duration={500} delay={1500}>
-              <img
-                className="w-[200px]"
-                src="/assets/images/illustrations/illustration-seamless-3.png"
-                alt=""
-              />
-            </Flip>
+          <Pulse forever delay={200} duration={1500}>
+            <img
+              className="w-[200px]"
+              src="/assets/images/illustrations/illustration-seamless-3.png"
+              alt=""
+            />
           </Pulse>
         </div>
       </div>
@@ -78,7 +72,7 @@ const Features = () => {
           alt=""
           className="w-full max-w-sm sm:max-w-lg"
         />
-        <Zoom when={state.isReady} duration={500} delay={1000}>
+        <Zoom when={state.isReady} duration={500} delay={400}>
           <div className={styles.stacked_halfround_1}>
             <img
               className={styles.floating}
@@ -88,7 +82,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1000}>
+        <Zoom when={state.isReady} duration={500} delay={100}>
           <div className={styles.stacked_halfround_2}>
             <img
               className={styles.floating}
@@ -98,7 +92,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1250}>
+        <Zoom when={state.isReady} duration={500} delay={300}>
           <div className={styles.stacked_unity}>
             <img
               className={styles.floating}
@@ -108,7 +102,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1500}>
+        <Zoom when={state.isReady} duration={500} delay={500}>
           <div className={styles.stacked_apple}>
             <img
               className={styles.floating}
@@ -118,7 +112,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1500}>
+        <Zoom when={state.isReady} duration={500} delay={200}>
           <div className={styles.stacked_android}>
             <img
               className={styles.floating}
@@ -139,7 +133,7 @@ const Features = () => {
           alt=""
           className="w-full max-w-sm sm:max-w-lg"
         />
-        <Zoom when={state.isReady} duration={500} delay={1000}>
+        <Zoom when={state.isReady} duration={500} delay={100}>
           <div className={styles.infra_nft}>
             <img
               className={styles.floating}
@@ -149,7 +143,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1000}>
+        <Zoom when={state.isReady} duration={500} delay={300}>
           <div className={styles.infra_marketplace}>
             <img
               className={styles.floating}
@@ -159,7 +153,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1250}>
+        <Zoom when={state.isReady} duration={500} delay={200}>
           <div className={styles.infra_swirl_right}>
             <img
               className={styles.floating}
@@ -169,7 +163,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1500}>
+        <Zoom when={state.isReady} duration={500} delay={400}>
           <div className={styles.infra_game}>
             <img
               className={styles.floating}
@@ -179,7 +173,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1500}>
+        <Zoom when={state.isReady} duration={500} delay={500}>
           <div className={styles.infra_coin}>
             <img
               className={styles.floating}
@@ -189,7 +183,7 @@ const Features = () => {
           </div>
         </Zoom>
 
-        <Zoom when={state.isReady} duration={500} delay={1500}>
+        <Zoom when={state.isReady} duration={500} delay={600}>
           <div className={styles.infra_swirl_left}>
             <img
               className={styles.floating}
@@ -271,7 +265,7 @@ const Features = () => {
             <Fade
               bottom
               duration={750}
-              delay={500}
+              delay={250}
               when={state.isReady}
               cascade
             >
@@ -300,7 +294,7 @@ const Features = () => {
                 </p>
               </div>
             </Fade>
-            <Fade bottom duration={750} delay={750} when={state.isReady}>
+            <Fade bottom duration={750} delay={250} when={state.isReady}>
               <div className="w-full sm:w-5/12 lg:w-1/2 flex justify-center">
                 {item.component ? (
                   item.component

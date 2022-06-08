@@ -43,7 +43,7 @@ const Banner = () => {
         firstTexts.forEach((_, idx: number) => {
           setTimeout(() => {
             setArr((oldArray: any) => oldArray.concat(styles.showed));
-          }, 250 * (idx + 1));
+          }, 200 * (idx + 1));
         });
 
         document.querySelector('body')?.classList.remove('overflow-hidden');
@@ -170,7 +170,7 @@ const Banner = () => {
                 className="w-full max-w-sm sm:max-w-lg"
               />
 
-              <Zoom when={state.isReady} duration={500} delay={500}>
+              <Zoom when={state.isReady} duration={500} delay={200}>
                 <div className={styles.card_top}>
                   <img
                     className={styles.floating}
@@ -180,7 +180,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={500}>
+              <Zoom when={state.isReady} duration={500} delay={400}>
                 <div className={styles.card_top_right}>
                   <img
                     className={styles.floating}
@@ -190,7 +190,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={750}>
+              <Zoom when={state.isReady} duration={500} delay={600}>
                 <div className={styles.card_left}>
                   <img
                     className={styles.floating}
@@ -200,7 +200,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1000}>
+              <Zoom when={state.isReady} duration={500} delay={300}>
                 <div className={styles.card_right_1}>
                   <img
                     className={styles.floating}
@@ -210,7 +210,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1000}>
+              <Zoom when={state.isReady} duration={500} delay={700}>
                 <div className={styles.card_right_2}>
                   <img
                     className={styles.floating}
@@ -220,7 +220,7 @@ const Banner = () => {
                 </div>
               </Zoom>
 
-              <Zoom when={state.isReady} duration={500} delay={1250}>
+              <Zoom when={state.isReady} duration={500} delay={500}>
                 <div className={styles.card_bottom_left}>
                   <img
                     className={styles.floating}
