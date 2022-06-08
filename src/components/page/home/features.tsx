@@ -2,10 +2,12 @@
 import React from 'react';
 
 import { ArrowRight } from 'akar-icons';
-import { Fade, Flip } from 'react-reveal';
+import { Fade, Flip, Zoom } from 'react-reveal';
 import Pulse from 'react-reveal/Pulse';
 
 import { Section } from '@components/layout';
+
+import styles from '../../../styles/components/page/home/features.module.scss';
 
 const Features = () => {
   const [state, setState] = React.useState({
@@ -68,6 +70,67 @@ const Features = () => {
     );
   };
 
+  const featureStacked = () => {
+    return (
+      <div className={`relative ${styles.floating_wrapper}`}>
+        <img
+          src="/assets/images/illustrations/illustration-stacked-bg.png"
+          alt=""
+          className="w-full max-w-sm sm:max-w-lg"
+        />
+        <Zoom when={state.isReady} duration={500} delay={1000}>
+          <div className={styles.item_halfround_1}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-stacked-half-round-1.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1000}>
+          <div className={styles.item_halfround_2}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-stacked-half-round-2.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1250}>
+          <div className={styles.item_unity}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-stacked-unity.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1500}>
+          <div className={styles.item_apple}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-stacked-apple.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1500}>
+          <div className={styles.item_android}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-stacked-android.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+      </div>
+    );
+  };
+
   const features = [
     {
       title: 'Seamless Experience',
@@ -85,8 +148,9 @@ const Features = () => {
     {
       title: "We're stacked",
       description:
-        'We handle the entire blockchain stack, so you can focus on building the best games out there. Our all-in-one solution offers the following:',
+        'We handle the entire blockchain stack, so you can focus on building the best apps out there. Our all-in-one solution offers the following:',
       asset: '/assets/images/illustrations/illustration-users.png',
+      component: featureStacked(),
       extras: [
         {
           label: 'NFT Creation/Management',

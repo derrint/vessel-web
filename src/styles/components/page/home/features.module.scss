@@ -1,0 +1,73 @@
+.floating_wrapper {
+  .item {
+    &_halfround_1 {
+      position: absolute;
+      width: 4%;
+      top: 13%;
+      left: 12%;
+    }
+
+    &_halfround_2 {
+      position: absolute;
+      width: 4%;
+      top: 3%;
+      right: 18%;
+
+      .floating {
+        animation-delay: 400ms;
+      }
+    }
+
+    &_unity {
+      width: 10%;
+      position: absolute;
+      top: 32%;
+      left: 6%;
+
+      .floating {
+        animation-delay: 800ms;
+      }
+    }
+
+    &_apple {
+      width: 9%;
+      position: absolute;
+      top: 16%;
+      right: 25%;
+
+      .floating {
+        animation-delay: 1200ms;
+      }
+    }
+
+    &_android {
+      width: 9%;
+      position: absolute;
+      bottom: 35%;
+      left: 15%;
+
+      .floating {
+        animation-delay: 400ms;
+      }
+    }
+  }
+  
+  .floating {
+    position: absolute;
+    animation-name: floating;
+    animation-delay: 1600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+
+    transform: translate3d(0,-50%,0);
+    transition: transform 1000ms cubic-bezier(.52,.01,.16,1) 1000ms;
+  }
+
+  @keyframes floating {
+    0%,to { transform:translate(0%,-50%); }
+    25% { transform:translate(5px,calc(-50% + 15px)); }
+    50% { transform:translate(10px,calc(-50% + 5px)); }
+    75% {transform:translate(0%,calc(-50% + 15px)); }
+  }
+}
