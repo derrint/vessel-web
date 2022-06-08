@@ -208,9 +208,11 @@ const Banner = () => {
         </Fade>
         <Fade bottom duration={750} delay={750} when={state.isReady}>
           <div className="mt-10 z-[2] text-center">
-            <button className="px-7 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium text-xl text-white bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end shadow-md">
-              Get started now ⚡
-            </button>
+            <Link href="/#contact" passHref>
+              <button className="px-7 lg:px-8 py-3 lg:py-4 rounded-2xl font-medium text-xl text-white bg-gradient-to-r from-gradient-primary-start to-gradient-primary-end shadow-md">
+                Get started now ⚡
+              </button>
+            </Link>
           </div>
         </Fade>
 
