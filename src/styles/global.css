@@ -32,6 +32,10 @@ html {
   scroll-padding-top: 84px; 
 }
 
+code span {
+  word-break: break-all;
+}
+
 .lds-spinner {
   color: white;
   display: inline-block;

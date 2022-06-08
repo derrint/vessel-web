@@ -19,13 +19,13 @@ const Highlights = () => {
       id: 1,
       name: 'Unity',
       component: () => (
-        <div className="bg-white rounded-2xl">
+        <div className="w-full text-sm sm:text-base">
           <ol className="list-decimal pl-5">
             <li className="pl-1 pb-2">
               Download the latest version of Unity SDK from
               <br />
               <a
-                className="text-primary"
+                className="text-primary break-all"
                 href="https://artifacts.openvessel.io/unity/OpenVessel-1.7.2.unitypackage"
               >
                 https://artifacts.openvessel.io/unity/OpenVessel-1.7.2.unitypackage
@@ -49,15 +49,17 @@ const Highlights = () => {
       id: 2,
       name: 'Android',
       component: () => (
-        <div>
+        <div className="text-sm sm:text-base">
           <div className="pb-2">
             Add the following to your app-level
-            <Code
-              text={'build.gradle'}
-              language={'js'}
-              theme={atomOneLight}
-              customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
-            />
+            <div className="inline">
+              <Code
+                text={'build.gradle'}
+                language={'js'}
+                theme={atomOneLight}
+                customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+              />
+            </div>
             file:
           </div>
           <CopyBlock
@@ -73,11 +75,10 @@ dependencies {
     implementation 'io.openvessel:sdk:1.7.2'
     ⋮
 }`}
-            language={'js'}
+            language={'jsx'}
             theme={atomOneLight}
             showLineNumbers
-            wrapLines
-            codeBlock
+            wrapLines={true}
             customStyle={{ borderRadius: 10 }}
           />
         </div>
@@ -110,8 +111,7 @@ end`}
                 language={'js'}
                 theme={atomOneLight}
                 showLineNumbers
-                wrapLines
-                codeBlock
+                wrapLines={true}
                 customStyle={{ borderRadius: 10 }}
               />
             </li>
@@ -140,8 +140,7 @@ end`}
                 language={'js'}
                 theme={atomOneLight}
                 showLineNumbers
-                wrapLines
-                codeBlock
+                wrapLines={true}
                 customStyle={{ borderRadius: 10 }}
               />
             </li>
@@ -154,7 +153,7 @@ end`}
   const highlightSDK = () => {
     return (
       <div className="w-full lg:w-[800px]">
-        <div className="p-9 text-left bg-gradient-to-r from-[#82dbdd] to-[#7fe5be] rounded-3xl">
+        <div className="p-4 sm:p-6 md:p-8 text-left bg-gradient-to-r from-[#82dbdd] to-[#7fe5be] rounded-3xl">
           <Tab.Group defaultIndex={1}>
             <div className="flex">
               <Tab.List className="flex space-x-1 rounded-xl bg-white/30 p-1">
@@ -163,7 +162,7 @@ end`}
                     key={tab.id}
                     className={({ selected }) =>
                       classNames(
-                        'w-full rounded-lg py-2 px-5 text-sm font-medium leading-5 text-black whitespace-nowrap',
+                        'w-full rounded-lg py-1 sm:py-2 px-3 sm:px-5 text-xs sm:text-sm font-medium leading-5 text-black whitespace-nowrap',
                         selected ? 'bg-white shadow' : 'hover:bg-white/40'
                       )
                     }
@@ -173,7 +172,7 @@ end`}
                 ))}
               </Tab.List>
             </div>
-            <Tab.Panels className="mt-8">
+            <Tab.Panels className="mt-4 sm:mt-6 md:mt-8">
               {tabs.map((content, idx) => (
                 <Tab.Panel
                   key={idx}
