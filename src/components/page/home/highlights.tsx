@@ -57,7 +57,7 @@ const Highlights = () => {
                 text={'build.gradle'}
                 language={'js'}
                 theme={atomOneLight}
-                customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                customStyle={{ marginLeft: 5, marginRight: 5 }}
               />
             </div>
             file:
@@ -88,7 +88,7 @@ dependencies {
       id: 3,
       name: 'iOS (CocoaPods)',
       component: () => (
-        <div>
+        <div className="text-sm sm:text-base">
           <ol className="list-decimal pl-5">
             <li className="pl-1 pb-5">
               <div className="pb-2">
@@ -97,7 +97,7 @@ dependencies {
                   text={'Podfile'}
                   language={'js'}
                   theme={atomOneLight}
-                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                  customStyle={{ marginLeft: 5, marginRight: 5 }}
                 />
                 :
               </div>
@@ -122,14 +122,14 @@ end`}
                   text={'vesselwa'}
                   language={'js'}
                   theme={atomOneLight}
-                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                  customStyle={{ marginLeft: 5, marginRight: 5 }}
                 />{' '}
                 scheme to your
                 <Code
                   text={'Info.plist'}
                   language={'js'}
                   theme={atomOneLight}
-                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                  customStyle={{ marginLeft: 5, marginRight: 5 }}
                 />
               </div>
               <CopyBlock
