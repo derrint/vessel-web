@@ -14,8 +14,8 @@ module.exports = {
     //   '6xl': '4rem',
     // },
     fontFamily: {
-      sans: ['Outfit'],
-      // sans: ['Objectivity'],
+      // sans: ['Outfit'],
+      sans: ['Objectivity'],
     },
     extend: {
       colors: {
