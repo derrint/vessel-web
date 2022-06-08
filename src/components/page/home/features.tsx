@@ -79,7 +79,7 @@ const Features = () => {
           className="w-full max-w-sm sm:max-w-lg"
         />
         <Zoom when={state.isReady} duration={500} delay={1000}>
-          <div className={styles.item_halfround_1}>
+          <div className={styles.stacked_halfround_1}>
             <img
               className={styles.floating}
               src="/assets/images/illustrations/illustration-stacked-half-round-1.png"
@@ -89,7 +89,7 @@ const Features = () => {
         </Zoom>
 
         <Zoom when={state.isReady} duration={500} delay={1000}>
-          <div className={styles.item_halfround_2}>
+          <div className={styles.stacked_halfround_2}>
             <img
               className={styles.floating}
               src="/assets/images/illustrations/illustration-stacked-half-round-2.png"
@@ -99,7 +99,7 @@ const Features = () => {
         </Zoom>
 
         <Zoom when={state.isReady} duration={500} delay={1250}>
-          <div className={styles.item_unity}>
+          <div className={styles.stacked_unity}>
             <img
               className={styles.floating}
               src="/assets/images/illustrations/illustration-stacked-unity.png"
@@ -109,7 +109,7 @@ const Features = () => {
         </Zoom>
 
         <Zoom when={state.isReady} duration={500} delay={1500}>
-          <div className={styles.item_apple}>
+          <div className={styles.stacked_apple}>
             <img
               className={styles.floating}
               src="/assets/images/illustrations/illustration-stacked-apple.png"
@@ -119,10 +119,81 @@ const Features = () => {
         </Zoom>
 
         <Zoom when={state.isReady} duration={500} delay={1500}>
-          <div className={styles.item_android}>
+          <div className={styles.stacked_android}>
             <img
               className={styles.floating}
               src="/assets/images/illustrations/illustration-stacked-android.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+      </div>
+    );
+  };
+
+  const featureInfra = () => {
+    return (
+      <div className={`relative ${styles.floating_wrapper}`}>
+        <img
+          src="/assets/images/illustrations/illustration-infra-bg.png"
+          alt=""
+          className="w-full max-w-sm sm:max-w-lg"
+        />
+        <Zoom when={state.isReady} duration={500} delay={1000}>
+          <div className={styles.infra_nft}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-nft.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1000}>
+          <div className={styles.infra_marketplace}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-marketplace.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1250}>
+          <div className={styles.infra_swirl_right}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-swirl-1.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1500}>
+          <div className={styles.infra_game}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-game.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1500}>
+          <div className={styles.infra_coin}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-coin.png"
+              alt=""
+            />
+          </div>
+        </Zoom>
+
+        <Zoom when={state.isReady} duration={500} delay={1500}>
+          <div className={styles.infra_swirl_left}>
+            <img
+              className={styles.floating}
+              src="/assets/images/illustrations/illustration-infra-swirl-2.png"
               alt=""
             />
           </div>
@@ -172,6 +243,7 @@ const Features = () => {
       description:
         "We've built and designed our own blockchain, Vessel, secured by Ethereum.",
       asset: '/assets/images/illustrations/illustration-infra.png',
+      component: featureInfra(),
       extras: [
         {
           label: 'Zero gas fees/cost',

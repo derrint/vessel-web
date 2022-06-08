@@ -1,5 +1,5 @@
 .floating_wrapper {
-  .item {
+  .stacked {
     &_halfround_1 {
       position: absolute;
       width: 4%;
@@ -48,6 +48,70 @@
 
       .floating {
         animation-delay: 400ms;
+      }
+    }
+  }
+
+  .infra {
+    &_nft {
+      position: absolute;
+      width: 7%;
+      top: 32%;
+      left: 21%;
+    }
+
+    &_marketplace {
+      position: absolute;
+      width: 8%;
+      top: 25%;
+      right: 25%;
+
+      .floating {
+        animation-delay: 400ms;
+      }
+    }
+
+    &_swirl_right {
+      width: 5%;
+      position: absolute;
+      top: 32%;
+      right: 16%;
+
+      .floating {
+        animation-delay: 1600ms;
+      }
+    }
+
+    &_game {
+      position: absolute;
+      width: 9%;
+      top: 56%;
+      left: 9%;
+
+      .floating {
+        animation-delay: 600ms;
+      }
+    }
+
+    &_coin {
+      width: 7%;
+      position: absolute;
+      top: 47%;
+      right: 20%;
+
+      .floating {
+        animation-delay: 1200ms;
+      }
+    }
+
+    &_swirl_left {
+      position: absolute;
+      width: 5%;
+      bottom: 26%;
+      left: 4%;
+
+      .floating {
+        animation-delay: 600ms;
       }
     }
   }
