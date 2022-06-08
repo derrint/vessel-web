@@ -63,15 +63,15 @@ const Banner = () => {
       </div>
 
       <Section className="relative z-[1]">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-semibold lg:leading-[80px] tracking-tight whitespace-pre-line z-[2] text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold lg:leading-[72px] tracking-tight whitespace-pre-line z-[2] text-center">
           {firstTexts.map((txt: any, idx: number) => {
             return (
               <div className={styles.flipAnimate} key={idx}>
                 <span
                   className={`${arr[idx] || ''} ${
                     [3, 4, 5].includes(idx)
-                      ? 'bg-primary text-primary before:text-primary'
-                      : 'bg-black text-black before:text-black'
+                      ? 'bg-primary text-transparent before:text-primary'
+                      : 'bg-black text-transparent before:text-black'
                   }
                     m-1 md:m-2 lg:m-3
                     `}
