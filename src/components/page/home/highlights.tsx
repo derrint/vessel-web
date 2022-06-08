@@ -1,13 +1,194 @@
 import React from 'react';
 
+import { Tab } from '@headlessui/react';
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
+import { CopyBlock, Code, atomOneLight } from 'react-code-blocks';
 import { Fade } from 'react-reveal';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(' ');
+}
+
 const Highlights = () => {
+  const [tabs] = React.useState([
+    {
+      id: 1,
+      name: 'Unity',
+      component: () => (
+        <div className="bg-white rounded-2xl">
+          <ol className="list-decimal pl-5">
+            <li className="pl-1 pb-2">
+              Download the latest version of Unity SDK from
+              <br />
+              <a
+                className="text-primary"
+                href="https://artifacts.openvessel.io/unity/OpenVessel-1.7.2.unitypackage"
+              >
+                https://artifacts.openvessel.io/unity/OpenVessel-1.7.2.unitypackage
+              </a>
+            </li>
+            <li className="pl-1 pb-2">
+              In Unity, select{' '}
+              <b>Assets &gt; Import Package &gt; Custom Package…</b>
+            </li>
+            <li className="pl-1 pb-2">
+              Choose the Unity Plugin file you downloaded.
+            </li>
+            <li className="pl-1">
+              In the <b>Import Unity Package</b> dialog, click <b>Import</b>.
+            </li>
+          </ol>
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      name: 'Android',
+      component: () => (
+        <div>
+          <div className="pb-2">
+            Add the following to your app-level
+            <Code
+              text={'build.gradle'}
+              language={'js'}
+              theme={atomOneLight}
+              customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+            />
+            file:
+          </div>
+          <CopyBlock
+            text={`repositories {
+    google()
+    mavenCentral()
+    maven {
+        url "https://artifacts.openvessel.io/maven/"
+    }
+    ⋮
+}
+dependencies {
+    implementation 'io.openvessel:sdk:1.7.2'
+    ⋮
+}`}
+            language={'js'}
+            theme={atomOneLight}
+            showLineNumbers
+            wrapLines
+            codeBlock
+            customStyle={{ borderRadius: 10 }}
+          />
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      name: 'iOS (CocoaPods)',
+      component: () => (
+        <div>
+          <ol className="list-decimal pl-5">
+            <li className="pl-1 pb-5">
+              <div className="pb-2">
+                Add the following lines to your
+                <Code
+                  text={'Podfile'}
+                  language={'js'}
+                  theme={atomOneLight}
+                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                />
+                :
+              </div>
+              <CopyBlock
+                text={`source 'https://cdn.cocoapods.org' 
+source 'https://github.com/OpenVesselIO/Wallet-Pods-iOS.git'
+⋮
+target '<YOUR PROJECT>' do
+    pod 'OpenVesselSDK', '~> 1.7.0'
+end`}
+                language={'js'}
+                theme={atomOneLight}
+                showLineNumbers
+                wrapLines
+                codeBlock
+                customStyle={{ borderRadius: 10 }}
+              />
+            </li>
+            <li className="pl-1">
+              <div className="pb-2">
+                Add{' '}
+                <Code
+                  text={'vesselwa'}
+                  language={'js'}
+                  theme={atomOneLight}
+                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                />{' '}
+                scheme to your
+                <Code
+                  text={'Info.plist'}
+                  language={'js'}
+                  theme={atomOneLight}
+                  customStyle={{ fontSize: 14, marginLeft: 5, marginRight: 5 }}
+                />
+              </div>
+              <CopyBlock
+                text={`<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>vesselwa</string>
+</array>`}
+                language={'js'}
+                theme={atomOneLight}
+                showLineNumbers
+                wrapLines
+                codeBlock
+                customStyle={{ borderRadius: 10 }}
+              />
+            </li>
+          </ol>
+        </div>
+      ),
+    },
+  ]);
+
+  const highlightSDK = () => {
+    return (
+      <div className="w-full lg:w-[800px]">
+        <div className="p-9 text-left bg-gradient-to-r from-[#82dbdd] to-[#7fe5be] rounded-3xl">
+          <Tab.Group defaultIndex={1}>
+            <div className="flex">
+              <Tab.List className="flex space-x-1 rounded-xl bg-white/30 p-1">
+                {tabs.map((tab) => (
+                  <Tab
+                    key={tab.id}
+                    className={({ selected }) =>
+                      classNames(
+                        'w-full rounded-lg py-2 px-5 text-sm font-medium leading-5 text-black whitespace-nowrap',
+                        selected ? 'bg-white shadow' : 'hover:bg-white/40'
+                      )
+                    }
+                  >
+                    {tab.name}
+                  </Tab>
+                ))}
+              </Tab.List>
+            </div>
+            <Tab.Panels className="mt-8">
+              {tabs.map((content, idx) => (
+                <Tab.Panel
+                  key={idx}
+                  className={classNames('rounded-xl bg-white p-5')}
+                >
+                  {content.component}
+                </Tab.Panel>
+              ))}
+            </Tab.Panels>
+          </Tab.Group>
+        </div>
+      </div>
+    );
+  };
+
   const cards = [
     {
       asset: '/assets/images/illustrations/illustration-live-app-1.png',
@@ -58,6 +239,7 @@ const Highlights = () => {
       title: 'Seamless and Intuitive Vessel SDK',
       description: 'Our SDK supports Unity, iOS and Android',
       asset: '/assets/images/illustrations/illustration-sdk.png',
+      component: highlightSDK(),
       link: {
         href: 'https://docs.openvessel.io/integration/EZzgG67O9oXGl9CReheF/',
         label: 'Explore Documentation',
@@ -77,7 +259,7 @@ const Highlights = () => {
     <Fade bottom duration={750} delay={250}>
       <Background color="bg-white" className="overflow-hidden">
         <Section>
-          <div className="flex flex-col gap-24 lg:gap-32">
+          <div className="flex flex-col gap-24">
             {highlights.map((item: any, idx: number) => (
               <div
                 key={idx}
