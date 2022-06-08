@@ -69,18 +69,18 @@
   }
 }
 
-.main {
-  .card {
-    &_top {
+.floating_wrapper {
+  .main {
+    &_wallet {
       position: absolute;
-      width: 58px;
+      width: 12%;
       top: 13%;
       left: 38%;
     }
 
-    &_top_right {
+    &_game {
       position: absolute;
-      width: 72px;
+      width: 14%;
       top: 13%;
       right: 8%;
 
@@ -89,8 +89,8 @@
       }
     }
 
-    &_left {
-      width: 54px;
+    &_cloud {
+      width: 11%;
       position: absolute;
       top: 52%;
       left: 1%;
@@ -100,8 +100,8 @@
       }
     }
 
-    &_right_1 {
-      width: 29px;
+    &_coin_1 {
+      width: 6%;
       position: absolute;
       top: 56%;
       right: 5%;
@@ -111,8 +111,8 @@
       }
     }
 
-    &_right_2 {
-      width: 25px;
+    &_coin_2 {
+      width: 5%;
       position: absolute;
       top: 63%;
       right: 11%;
@@ -122,8 +122,8 @@
       }
     }
 
-    &_bottom_left {
-      width: 30px;
+    &_coin_3 {
+      width: 6%;
       position: absolute;
       bottom: 15%;
       left: 5%;

@@ -156,7 +156,7 @@ const Banner = () => {
         </Fade>
       </Section>
 
-      <Section className={`relative ${styles.main}`}>
+      <Section className={`relative ${styles.floating_wrapper}`}>
         <Fade
           duration={750}
           delay={0}
@@ -171,7 +171,7 @@ const Banner = () => {
               />
 
               <Zoom when={state.isReady} duration={500} delay={200}>
-                <div className={styles.card_top}>
+                <div className={styles.main_wallet}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-wallet.png"
@@ -181,7 +181,7 @@ const Banner = () => {
               </Zoom>
 
               <Zoom when={state.isReady} duration={500} delay={400}>
-                <div className={styles.card_top_right}>
+                <div className={styles.main_game}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-game.png"
@@ -191,7 +191,7 @@ const Banner = () => {
               </Zoom>
 
               <Zoom when={state.isReady} duration={500} delay={600}>
-                <div className={styles.card_left}>
+                <div className={styles.main_cloud}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-cloud.png"
@@ -201,7 +201,7 @@ const Banner = () => {
               </Zoom>
 
               <Zoom when={state.isReady} duration={500} delay={300}>
-                <div className={styles.card_right_1}>
+                <div className={styles.main_coin_1}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-coin-1.png"
@@ -211,7 +211,7 @@ const Banner = () => {
               </Zoom>
 
               <Zoom when={state.isReady} duration={500} delay={700}>
-                <div className={styles.card_right_2}>
+                <div className={styles.main_coin_2}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-coin-2.png"
@@ -221,7 +221,7 @@ const Banner = () => {
               </Zoom>
 
               <Zoom when={state.isReady} duration={500} delay={500}>
-                <div className={styles.card_bottom_left}>
+                <div className={styles.main_coin_3}>
                   <img
                     className={styles.floating}
                     src="/assets/images/illustrations/illustration-main-coin-3.png"

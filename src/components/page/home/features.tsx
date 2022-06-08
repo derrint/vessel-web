@@ -31,30 +31,27 @@ const Features = () => {
           className="w-[360px]"
         />
 
-        <div className="absolute -top-14 -left-14">
+        <div className="absolute top-0 lg:-top-14 left-0 lg:-left-14 w-[58%] lg:w-[240px]">
           <Pulse forever delay={0} duration={1500}>
             <img
-              className="w-[240px]"
               src="/assets/images/illustrations/illustration-seamless-1.png"
               alt=""
             />
           </Pulse>
         </div>
 
-        <div className="absolute top-9 right-8">
+        <div className="absolute top-[20%] lg:top-9 right-8 w-[52%] lg:w-[200px]">
           <Pulse forever delay={100} duration={1500}>
             <img
-              className="w-[200px]"
               src="/assets/images/illustrations/illustration-seamless-2.png"
               alt=""
             />
           </Pulse>
         </div>
 
-        <div className="absolute bottom-2 -right-10">
+        <div className="absolute bottom-0 lg:bottom-2 -right-5 lg:-right-10 w-[52%] lg:w-[200px]">
           <Pulse forever delay={200} duration={1500}>
             <img
-              className="w-[200px]"
               src="/assets/images/illustrations/illustration-seamless-3.png"
               alt=""
             />
