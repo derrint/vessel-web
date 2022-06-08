@@ -15,6 +15,7 @@ module.exports = {
     // },
     fontFamily: {
       sans: ['Outfit'],
+      // sans: ['Objectivity'],
     },
     extend: {
       colors: {
