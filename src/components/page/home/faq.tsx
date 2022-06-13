@@ -112,11 +112,13 @@ const Highlights = () => {
                       <span className="text-lg font-medium pt-1 text-left">
                         {item.question}
                       </span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? 'rotate-180 transform' : ''
-                        } h-5 w-5 text-primary`}
-                      />
+                      <div>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? 'rotate-180 transform' : ''
+                          } h-5 w-5 text-primary`}
+                        />
+                      </div>
                     </Disclosure.Button>
                     <Transition
                       show={open}
