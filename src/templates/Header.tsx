@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import { LinkOut } from 'akar-icons';
@@ -11,6 +13,7 @@ import { DropdownMenu } from '@components/dropdown';
 import { Section } from '@components/layout';
 import { NavbarTwoColumns } from '@components/navigation/NavbarTwoColumns';
 import { menus } from '@data/index';
+import { useState } from '@overmind/index';
 
 const Header = () => {
   const router = useRouter();
@@ -37,6 +40,8 @@ const Header = () => {
 
     return () => {};
   }, [state.isReady]);
+
+  const { plugins } = useState();
 
   return (
     <Background
@@ -66,6 +71,7 @@ const Header = () => {
                 isDesktop,
                 isMobile,
                 isExternalLink,
+                goToSectionIndex,
               }: any) => (
                 <li
                   key={id}
@@ -78,10 +84,25 @@ const Header = () => {
                       <DropdownMenu
                         title={label}
                         items={submenus}
-                        onChange={(v: any) => console.log(v)}
+                        onChange={() => {}}
                         showPreview
                         classNames={{ itemsWrapper: '!mt-4 !rounded-xl' }}
                       />
+                    ) : goToSectionIndex ? (
+                      <a
+                        className={`text-base font-medium hover:text-primary flex items-center ${
+                          isButton
+                            ? 'bg-primary px-4 lg:px-6 py-2 lg:py-4 rounded-full'
+                            : ''
+                        }
+                          ${router.pathname === href ? 'text-primary' : ''}
+                          `}
+                        onClick={() => {
+                          plugins.fullPage.moveTo(goToSectionIndex);
+                        }}
+                      >
+                        {label}
+                      </a>
                     ) : (
                       <Link href={href} passHref>
                         <a

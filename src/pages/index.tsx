@@ -13,6 +13,7 @@ import {
   ContactUs,
   FAQ,
 } from '@components/page/home';
+import { useActions, useState } from '@overmind/index';
 import { Footer } from '@templates/Footer';
 
 const Home = () => {
@@ -29,6 +30,15 @@ const Home = () => {
 
   const [activeSection, setActiveSection] = React.useState('' as any);
   const [FPA, setFPA] = React.useState(null as any);
+
+  const { plugins } = useState();
+  const { setPlugins } = useActions();
+
+  React.useEffect(() => {
+    setPlugins({ ...plugins, fullPage: FPA });
+
+    return () => {};
+  }, [FPA]);
 
   return (
     <>

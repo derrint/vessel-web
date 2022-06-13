@@ -5,6 +5,7 @@ const menus = [
     href: '/#features',
     isDesktop: true,
     isMobile: true,
+    goToSectionIndex: 4,
   },
   // {
   //   id: 2,

@@ -21,3 +21,7 @@ export const hideModal = async (context: any) => {
     isVisible: false,
   };
 };
+
+export const setPlugins = async (context: any, payload: object) => {
+  context.state.plugins = payload;
+};

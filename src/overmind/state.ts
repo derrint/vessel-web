@@ -2,6 +2,7 @@ type State = {
   isLoading: boolean;
   auth: any;
   modal: any;
+  plugins: any;
 };
 
 export const state: State = {
@@ -14,5 +15,8 @@ export const state: State = {
   modal: {
     name: null,
     isVisible: false,
+  },
+  plugins: {
+    fullPage: null,
   },
 };
