@@ -6,8 +6,7 @@ import { Fade, Zoom } from 'react-reveal';
 import Pulse from 'react-reveal/Pulse';
 
 import { Section } from '@components/layout';
-
-import styles from '../../../styles/components/page/home/features.module.scss';
+import styles from '@styles/components/page/home/features.module.scss';
 
 const Features = () => {
   const [state, setState] = React.useState({

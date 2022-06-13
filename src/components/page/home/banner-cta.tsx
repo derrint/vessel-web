@@ -7,8 +7,7 @@ import { Fade, Zoom } from 'react-reveal';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
-
-import styles from '../../../styles/components/page/home/banner.module.scss';
+import styles from '@styles/components/page/home/banner.module.scss';
 
 const BannerCTA = () => {
   const text = {

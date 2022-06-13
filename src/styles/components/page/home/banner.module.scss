@@ -40,6 +40,21 @@
   // } 
 }
 
+.bg {
+  height: 100%;
+
+  .playerWrapper {
+    position: relative;
+    height: 100%;
+
+    .video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 .floating_wrapper {
   .main {
     &_wallet {
