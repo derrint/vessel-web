@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ReactFullpage from '@fullpage/react-fullpage';
-import { CgChevronDownO, CgChevronUpO } from 'react-icons/cg';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 import {
   SplashScreen,
@@ -25,24 +25,23 @@ const Home = () => {
     'faq',
   ];
 
-  const [activeSection, setActiveSection] = React.useState('' as any);
-  const [FPA, setFPA] = React.useState(null as any);
-
   return (
     <>
       <SplashScreen />
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20">
+        <Player
+          autoplay
+          loop
+          src="/assets/93440-scroll-down.json"
+          style={{ height: '60px', width: '60px' }}
+        />
+        <span className="text-sm text-black/40">scroll for more</span>
+      </div>
       <ReactFullpage
         scrollingSpeed={750}
-        navigation
-        navigationPosition="right"
         anchors={anchors}
-        afterLoad={(_, destination) => {
-          setActiveSection(destination.anchor);
-        }}
         scrollOverflow
-        render={({ fullpageApi }) => {
-          setFPA(fullpageApi);
-
+        render={() => {
           return (
             <ReactFullpage.Wrapper>
               <div className="section">
@@ -70,41 +69,6 @@ const Home = () => {
           );
         }}
       />
-
-      <div className="fixed right-[17px] top-[50%] mt-[130px] bg-[#22222233] px-[4px] py-[8px] rounded-[16px] flex flex-col gap-2">
-        <button
-          className={
-            activeSection === anchors[0] ? 'cursor-default' : 'cursor-pointer'
-          }
-          onClick={() => {
-            FPA.moveSectionUp();
-          }}
-        >
-          <CgChevronUpO
-            size="20"
-            color={activeSection === anchors[0] ? '#FFFFFF66' : '#FFFFFF'}
-          />
-        </button>
-        <button
-          className={
-            activeSection === anchors[anchors.length - 1]
-              ? 'cursor-default'
-              : 'cursor-pointer'
-          }
-          onClick={() => {
-            FPA.moveSectionDown();
-          }}
-        >
-          <CgChevronDownO
-            size="20"
-            color={
-              activeSection === anchors[anchors.length - 1]
-                ? '#FFFFFF66'
-                : '#FFFFFF'
-            }
-          />
-        </button>
-      </div>
     </>
   );
 };
