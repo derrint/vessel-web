@@ -72,7 +72,7 @@ const Highlights = () => {
     {
       id: 9,
       question: 'How can I share feedback or bugs that I find in the app?',
-      answer: 'Please reach out to support@openvessel.io',
+      answer: `Please reach out to <a class='text-primary' href='mailto:support@openvessel.io'>support@openvessel.io</a>`,
     },
     {
       id: 10,
