@@ -14,6 +14,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.26",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@tippyjs/react": "^4.2.6",

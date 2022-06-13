@@ -36,6 +36,10 @@ code span {
   word-break: break-all;
 }
 
+.fp-watermark {
+  display: none;
+}
+
 .lds-spinner {
   color: white;
   display: inline-block;
