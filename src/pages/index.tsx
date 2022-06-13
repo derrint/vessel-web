@@ -4,7 +4,10 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { CgChevronDownO, CgChevronUpO } from 'react-icons/cg';
 
 import {
-  Banner,
+  SplashScreen,
+  BannerWelcome,
+  BannerVideo,
+  BannerCTA,
   Highlights,
   Features,
   ContactUs,
@@ -14,16 +17,12 @@ import {
 const Home = () => {
   const anchors = [
     'welcome',
-    'lootbox-info',
-    'game-trailer',
-    'game-rule',
-    'daily-quest',
-    'nft-cards',
-    'events',
-    'stages',
-    'lootbox-list',
-    'roadmap',
-    'join',
+    'vessel',
+    'get-started',
+    'features',
+    'highlights',
+    'contact-us',
+    'faq',
   ];
 
   const [activeSection, setActiveSection] = React.useState('' as any);
@@ -31,6 +30,7 @@ const Home = () => {
 
   return (
     <>
+      <SplashScreen />
       <ReactFullpage
         scrollingSpeed={750}
         navigation
@@ -46,7 +46,13 @@ const Home = () => {
           return (
             <ReactFullpage.Wrapper>
               <div className="section">
-                <Banner />
+                <BannerWelcome />
+              </div>
+              <div className="section">
+                <BannerVideo />
+              </div>
+              <div className="section">
+                <BannerCTA />
               </div>
               <div className="section">
                 <Features />

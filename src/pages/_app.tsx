@@ -8,6 +8,7 @@ import { Header } from '@templates/Header';
 import { AppConfig } from '@utils/AppConfig';
 
 import '@styles/global.css';
+import '@styles/index.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider value={store}>

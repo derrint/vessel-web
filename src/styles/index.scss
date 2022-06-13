@@ -1,0 +1,67 @@
+// -----
+// ----- Splash Screen -----
+// -----
+
+.splash-screen {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(182.49deg, #3D7BFF 4.17%, #6734FF 47.97%);
+  height: 100vh;
+  width: 100vw;
+  animation: lift 0.5s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  
+  @keyframes lift {
+    0% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      transform: translate3d(0, -100%, 0);
+      opacity: 1;
+      visibility: hidden;
+    }
+  }
+}
+
+// -----
+// ----- fullPage.js -----
+// -----
+
+.fp-watermark {
+  display: none;
+}
+
+#fp-nav {
+  &.fp-right {
+    right: 27px !important;
+  }
+
+  ul {
+    background: rgba(34, 34, 34, 0.25);
+    border-radius: 16px;
+    padding: 8px 0 !important;
+
+    li a span {
+      background: rgba(255, 255, 255, 0.25) !important;
+      margin: -6px 0 0 -2px !important;
+      width: 4px !important;
+      height: 12px !important;
+      border-radius: 2px !important;
+    }
+
+    li a.active span, 
+    li:hover a.active span {
+      height: 16px !important;
+      margin-top: -8px !important;
+      background: #ffffff !important;
+    }
+  }
+}

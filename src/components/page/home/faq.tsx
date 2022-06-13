@@ -91,7 +91,7 @@ const Highlights = () => {
 
   return (
     <Background color="bg-white" className="overflow-hidden">
-      <Section id="faq">
+      <Section className="mt-[80px] lg:mt-[84px]">
         <Fade bottom duration={750} delay={250}>
           <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight text-center">
             Frequently Asked Question

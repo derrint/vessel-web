@@ -250,7 +250,7 @@ const Features = () => {
   ];
 
   return (
-    <Section id="features">
+    <Section className="mt-[80px] lg:mt-[84px]">
       <div className="relative flex flex-col justify-center z-[1] gap-20">
         {features.map((item: any, idx: number) => (
           <div
