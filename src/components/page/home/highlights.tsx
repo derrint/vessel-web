@@ -256,7 +256,7 @@ end`}
 
   return (
     <Background color="bg-white" className="overflow-hidden">
-      <Section>
+      <Section id="highlights">
         <div className="flex flex-col gap-24">
           {highlights.map((item: any, idx: number) => (
             <div
