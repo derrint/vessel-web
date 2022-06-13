@@ -108,12 +108,20 @@ const Header = () => {
               )
             )}
             <div className="pt-1 flex items-center gap-3">
-              <div className="rounded-full p-1 bg-black text-white">
-                <FaDiscord size={14} />
-              </div>
-              <div className="rounded-full p-1 bg-black text-white">
-                <FaTwitter size={14} />
-              </div>
+              <Link href={'https://discord.gg/DZrNRBkmzt'} passHref>
+                <a target={'_blank'}>
+                  <div className="rounded-full p-1 bg-black text-white">
+                    <FaDiscord size={14} />
+                  </div>
+                </a>
+              </Link>
+              <Link href={'https://twitter.com/vesselnfts'} passHref>
+                <a target={'_blank'}>
+                  <div className="rounded-full p-1 bg-black text-white">
+                    <FaTwitter size={14} />
+                  </div>
+                </a>
+              </Link>
             </div>
           </NavbarTwoColumns>
         </Section>
