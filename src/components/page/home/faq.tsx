@@ -97,74 +97,76 @@ const Highlights = () => {
             Frequently Asked Question
           </h1>
         </Fade>
-        <div className="mt-10 mx-auto max-w-screen-md">
-          {faqs.map((item: any, idx: number) => (
-            <div
-              key={idx}
-              className={`border-b-[1px] border-b-black/10 ${
-                idx === 0 ? 'border-t-[1px] border-t-black/10' : ''
-              }`}
-            >
-              <Disclosure>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex w-full gap-5 justify-between items-center py-4">
-                      <span className="text-lg font-medium pt-1 text-left">
-                        {item.question}
-                      </span>
-                      <div>
-                        <ChevronUpIcon
-                          className={`${
-                            open ? 'rotate-180 transform' : ''
-                          } h-5 w-5 text-primary`}
-                        />
-                      </div>
-                    </Disclosure.Button>
-                    <Transition
-                      show={open}
-                      enter="transition duration-100 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
-                      enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-75 ease-out"
-                      leaveFrom="transform scale-100 opacity-100"
-                      leaveTo="transform scale-95 opacity-0"
-                      className={'transition-transform duration-300'}
-                    >
-                      <Disclosure.Panel unmount={false} className="pb-4">
-                        {item.answers ? (
-                          <ul className="list-disc pl-5">
-                            {item.answers.map((answer: any, idx2: number) => (
-                              <li key={idx2}>
-                                <h3
-                                  className={`text-black/80 font-bold ${
-                                    idx2 === 0 ? 'mt-2' : 'mt-6'
-                                  }`}
-                                >
-                                  {answer.title}
-                                </h3>
-                                <p
-                                  className="text-black/80 whitespace-pre-line mt-2"
-                                  dangerouslySetInnerHTML={{
-                                    __html: answer.description,
-                                  }}
-                                />
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p
-                            className="text-black/80 whitespace-pre-line"
-                            dangerouslySetInnerHTML={{ __html: item.answer }}
+        <Fade bottom duration={750} delay={250}>
+          <div className="mt-10 mx-auto max-w-screen-md">
+            {faqs.map((item: any, idx: number) => (
+              <div
+                key={idx}
+                className={`border-b-[1px] border-b-black/10 ${
+                  idx === 0 ? 'border-t-[1px] border-t-black/10' : ''
+                }`}
+              >
+                <Disclosure>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full gap-5 justify-between items-center py-4">
+                        <span className="text-lg font-medium pt-1 text-left">
+                          {item.question}
+                        </span>
+                        <div>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'rotate-180 transform' : ''
+                            } h-5 w-5 text-primary`}
                           />
-                        )}
-                      </Disclosure.Panel>
-                    </Transition>
-                  </>
-                )}
-              </Disclosure>
-            </div>
-          ))}
-        </div>
+                        </div>
+                      </Disclosure.Button>
+                      <Transition
+                        show={open}
+                        enter="transition duration-100 ease-out"
+                        enterFrom="transform scale-95 opacity-0"
+                        enterTo="transform scale-100 opacity-100"
+                        leave="transition duration-75 ease-out"
+                        leaveFrom="transform scale-100 opacity-100"
+                        leaveTo="transform scale-95 opacity-0"
+                        className={`transition-all duration-300`}
+                      >
+                        <Disclosure.Panel unmount={false} className="pb-4">
+                          {item.answers ? (
+                            <ul className="list-disc pl-5">
+                              {item.answers.map((answer: any, idx2: number) => (
+                                <li key={idx2}>
+                                  <h3
+                                    className={`text-black/80 font-bold ${
+                                      idx2 === 0 ? 'mt-2' : 'mt-6'
+                                    }`}
+                                  >
+                                    {answer.title}
+                                  </h3>
+                                  <p
+                                    className="text-black/80 whitespace-pre-line mt-2"
+                                    dangerouslySetInnerHTML={{
+                                      __html: answer.description,
+                                    }}
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p
+                              className="text-black/80 whitespace-pre-line"
+                              dangerouslySetInnerHTML={{ __html: item.answer }}
+                            />
+                          )}
+                        </Disclosure.Panel>
+                      </Transition>
+                    </>
+                  )}
+                </Disclosure>
+              </div>
+            ))}
+          </div>
+        </Fade>
       </Section>
     </Background>
   );
