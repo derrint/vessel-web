@@ -90,7 +90,7 @@ const Header = () => {
                       />
                     ) : goToSectionIndex ? (
                       <a
-                        className={`text-base font-medium hover:text-primary flex items-center ${
+                        className={`text-base font-medium hover:text-primary flex items-center cursor-pointer ${
                           isButton
                             ? 'bg-primary px-4 lg:px-6 py-2 lg:py-4 rounded-full'
                             : ''
