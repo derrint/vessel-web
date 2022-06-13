@@ -13,6 +13,7 @@ import {
   ContactUs,
   FAQ,
 } from '@components/page/home';
+import { Footer } from '@templates/Footer';
 
 const Home = () => {
   const anchors = [
@@ -23,25 +24,49 @@ const Home = () => {
     'highlights',
     'contact-us',
     'faq',
+    'footer',
   ];
+
+  const [activeSection, setActiveSection] = React.useState('' as any);
+  const [FPA, setFPA] = React.useState(null as any);
 
   return (
     <>
       <SplashScreen />
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20">
+
+      <button
+        className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-[1] transition-all duration-150 ${
+          activeSection === 'footer' ? 'opacity-0' : 'opacity-100'
+        }`}
+        onClick={() => {
+          FPA.moveSectionDown();
+        }}
+      >
         <Player
           autoplay
           loop
           src="/assets/93440-scroll-down.json"
           style={{ height: '60px', width: '60px' }}
         />
-        <span className="text-sm text-black/40">scroll for more</span>
-      </div>
+        <span
+          className={`text-sm transition-all duration-150 ${
+            activeSection === 'contact-us' ? 'text-white/80' : 'text-black/80'
+          }`}
+        >
+          scroll for more
+        </span>
+      </button>
+
       <ReactFullpage
         scrollingSpeed={750}
         anchors={anchors}
+        afterLoad={(_, destination) => {
+          setActiveSection(destination.anchor);
+        }}
         scrollOverflow
-        render={() => {
+        render={({ fullpageApi }) => {
+          setFPA(fullpageApi);
+
           return (
             <ReactFullpage.Wrapper>
               <div className="section">
@@ -64,6 +89,9 @@ const Home = () => {
               </div>
               <div className="section">
                 <FAQ />
+              </div>
+              <div className="section fp-auto-height">
+                <Footer />
               </div>
             </ReactFullpage.Wrapper>
           );
