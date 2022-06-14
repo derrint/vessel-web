@@ -45,8 +45,8 @@ const NavbarTwoColumns = (props: INavbarProps) => {
             Router.push(menus.find((x) => x.id === v)?.href as any);
           }}
           classNames={{
-            wrapper: 'md:hidden',
-            itemsWrapper: 'w-full mx-0 rounded-none',
+            wrapper: 'md:hidden flex',
+            itemsWrapper: 'w-full !m-0 top-[64px] left-0 rounded-none',
             items: 'gap-2 flex flex-col',
             itemText: 'font-bold',
           }}

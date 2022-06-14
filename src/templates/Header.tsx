@@ -55,7 +55,7 @@ const Header = () => {
       }`}
     >
       <Fade top duration={750} delay={0} when={state.isReady}>
-        <Section yPadding="py-6" className="relative" isHeader>
+        <Section yPadding="py-5 md:py-6" className="relative" isHeader>
           <NavbarTwoColumns
             logo={
               <img
