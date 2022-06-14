@@ -61,7 +61,7 @@ const BannerVideo = () => {
             <img
               src={logoAnimationGIF}
               alt="Muted Video"
-              className="object-cover h-screen w-screen"
+              className="object-contain h-screen w-screen"
             />
           ) : (
             <div
