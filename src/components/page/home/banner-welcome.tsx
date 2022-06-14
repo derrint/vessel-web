@@ -48,7 +48,10 @@ const BannerWelcome = () => {
   }, [state.isReady]);
 
   return (
-    <Background color="bg-white relative">
+    <Background
+      color="bg-white relative"
+      className="h-full flex flex-col justify-center"
+    >
       <Fade
         duration={3750}
         delay={250}
@@ -56,9 +59,9 @@ const BannerWelcome = () => {
         cascade
       >
         <div className="w-full flex justify-center">
-          <div className="absolute z-[1] top-10 sm:top-16 md:top-24 lg:-top-[600px] flex">
-            <div className="bg-secondary/30 rounded-full h-32 lg:h-[600px] aspect-square blur-2xl lg:blur-[240px]"></div>
-            <div className="bg-primary/30 rounded-full h-32 lg:h-[600px] aspect-square blur-2xl lg:blur-[240px]"></div>
+          <div className="absolute z-[1] top-0 sm:-top-[10%] md:-top-[20%] lg:-top-[50%] flex h-full">
+            <div className="bg-secondary/30 rounded-full h-80 lg:h-[600px] aspect-square blur-[120px] lg:blur-[240px]"></div>
+            <div className="bg-primary/30 rounded-full h-80 lg:h-[600px] aspect-square blur-[120px] lg:blur-[240px]"></div>
           </div>
         </div>
       </Fade>
