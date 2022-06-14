@@ -98,7 +98,7 @@ const BannerWelcome = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-0 top-5 sm:top-10 w-20 sm:w-[120px] -z-[1]"
+            className="absolute right-0 -top-5 sm:-top-10 w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
 
@@ -111,7 +111,7 @@ const BannerWelcome = () => {
           <img
             src="/assets/images/vectors/swoosh-md.svg"
             alt=""
-            className="absolute left-0 top-32 w-14 sm:w-[80px] -z-[1]"
+            className="absolute -left-8 sm:-left-24 top-28 w-14 sm:w-[80px] -z-[1]"
           />
         </Fade>
 
@@ -124,7 +124,7 @@ const BannerWelcome = () => {
           <img
             src="/assets/images/vectors/swoosh-lg.svg"
             alt=""
-            className="absolute right-1/4 bottom-2 sm:bottom-10 w-20 sm:w-[120px] -z-[1]"
+            className="absolute right-1/4 -bottom-2 sm:-bottom-10 w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
       </Section>
