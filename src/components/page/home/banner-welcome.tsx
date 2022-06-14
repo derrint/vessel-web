@@ -48,7 +48,21 @@ const BannerWelcome = () => {
   }, [state.isReady]);
 
   return (
-    <Background color="bg-white">
+    <Background color="bg-white relative">
+      <Fade
+        duration={3750}
+        delay={250}
+        when={state.isReady && state.isSplashScreenDone}
+        cascade
+      >
+        <div className="w-full flex justify-center">
+          <div className="absolute z-[1] top-10 sm:top-16 md:top-24 lg:-top-[600px] flex">
+            <div className="bg-secondary/30 rounded-full h-32 lg:h-[600px] aspect-square blur-2xl lg:blur-[240px]"></div>
+            <div className="bg-primary/30 rounded-full h-32 lg:h-[600px] aspect-square blur-2xl lg:blur-[240px]"></div>
+          </div>
+        </div>
+      </Fade>
+
       <Section className="relative z-[1]">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold lg:leading-[72px] tracking-tight whitespace-pre-line z-[2] text-center">
           {firstTexts.map((txt: any, idx: number) => {
@@ -71,20 +85,6 @@ const BannerWelcome = () => {
             );
           })}
         </h1>
-
-        <Fade
-          duration={3750}
-          delay={250}
-          when={state.isReady && state.isSplashScreenDone}
-          cascade
-        >
-          <div className="w-full flex justify-center">
-            <div className="absolute -z-[1] top-10 sm:top-16 md:top-24 lg:top-32 flex">
-              <div className="bg-primary/30 rounded-full w-32 lg:w-60 h-32 lg:h-60 blur-2xl lg:blur-3xl"></div>
-              <div className="bg-secondary/30 rounded-full w-32 lg:w-60 h-32 lg:h-60 blur-2xl lg:blur-3xl"></div>
-            </div>
-          </div>
-        </Fade>
 
         <Fade
           right

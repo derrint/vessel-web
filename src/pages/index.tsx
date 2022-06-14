@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -31,11 +32,11 @@ const Home = () => {
   const [activeSection, setActiveSection] = React.useState('' as any);
   const [FPA, setFPA] = React.useState(null as any);
 
-  const { plugins } = useState();
-  const { setPlugins } = useActions();
+  const { fullPage } = useState().plugins;
+  const { setFullPage } = useActions();
 
   React.useEffect(() => {
-    setPlugins({ ...plugins, fullPage: FPA });
+    setFullPage({ ...fullPage, methods: FPA });
 
     return () => {};
   }, [FPA]);
@@ -72,6 +73,9 @@ const Home = () => {
         anchors={anchors}
         afterLoad={(_, destination) => {
           setActiveSection(destination.anchor);
+        }}
+        onLeave={(_, destination) => {
+          setFullPage({ ...fullPage, activeSection: destination.anchor });
         }}
         scrollOverflow
         render={({ fullpageApi }) => {

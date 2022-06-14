@@ -41,11 +41,15 @@ const Header = () => {
     return () => {};
   }, [state.isReady]);
 
-  const { plugins } = useState();
+  const { fullPage } = useState().plugins;
 
   return (
     <Background
-      color="bg-white"
+      color={
+        fullPage?.activeSection && fullPage?.activeSection !== 'welcome'
+          ? 'bg-white'
+          : 'bg-transparent'
+      }
       className={`fixed top-0 w-full z-10 transition-all duration-300 ${
         state.isAnimationDone ? '' : ''
       }`}
@@ -98,7 +102,7 @@ const Header = () => {
                           ${router.pathname === href ? 'text-primary' : ''}
                           `}
                         onClick={() => {
-                          plugins.fullPage.moveTo(goToSectionIndex);
+                          fullPage.methods.moveTo(goToSectionIndex);
                         }}
                       >
                         {label}

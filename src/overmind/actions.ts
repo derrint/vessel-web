@@ -22,6 +22,6 @@ export const hideModal = async (context: any) => {
   };
 };
 
-export const setPlugins = async (context: any, payload: object) => {
-  context.state.plugins = payload;
+export const setFullPage = async (context: any, payload: object) => {
+  context.state.plugins.fullPage = payload;
 };
