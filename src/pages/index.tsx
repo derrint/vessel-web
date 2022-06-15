@@ -47,7 +47,9 @@ const Home = () => {
 
       <button
         className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-[1] transition-all duration-150 ${
-          activeSection === 'footer' ? 'opacity-0' : 'opacity-100'
+          activeSection === 'welcome'
+            ? 'opacity-100 visible'
+            : 'opacity-0 invisible'
         }`}
         onClick={() => {
           FPA.moveSectionDown();
@@ -71,10 +73,8 @@ const Home = () => {
       <ReactFullpage
         scrollingSpeed={750}
         anchors={anchors}
-        afterLoad={(_, destination) => {
-          setActiveSection(destination.anchor);
-        }}
         onLeave={(_, destination) => {
+          setActiveSection(destination.anchor);
           setFullPage({ ...fullPage, activeSection: destination.anchor });
         }}
         scrollOverflow
