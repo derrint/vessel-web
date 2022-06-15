@@ -22,8 +22,11 @@ const Home = () => {
     'welcome',
     'vessel',
     'get-started',
-    'features',
-    'highlights',
+    'features-seamless',
+    'features-stacked',
+    'features-infra',
+    'highlights-sdk',
+    'highlights-live',
     'contact-us',
     'faq',
     'footer',
@@ -92,12 +95,8 @@ const Home = () => {
               <div className="section">
                 <BannerCTA />
               </div>
-              <div className="section">
-                <Features />
-              </div>
-              <div className="section">
-                <Highlights />
-              </div>
+              <Features />
+              <Highlights />
               <div className="section">
                 <ContactUs />
               </div>
