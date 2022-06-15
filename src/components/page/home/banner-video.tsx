@@ -57,7 +57,7 @@ const BannerVideo = () => {
     <Background color="bg-white">
       <div className={styles.bg}>
         <div className={styles.playerWrapper}>
-          {!shouldUseImage ? ( // temporarily negated
+          {shouldUseImage ? ( // temporarily negated
             <img
               src={logoAnimationGIF}
               alt="Muted Video"
