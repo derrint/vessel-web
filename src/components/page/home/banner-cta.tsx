@@ -101,7 +101,7 @@ const BannerCTA = () => {
         </Fade>
 
         <Fade bottom duration={750} delay={250} when={state.isReady}>
-          <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2] text-center">
+          <p className="text-sm sm:text-base lg:text-lg lg:leading-7 mt-6 whitespace-pre-line z-[2] text-center font-medium">
             {text?.second}
           </p>
         </Fade>
