@@ -65,7 +65,7 @@ const BannerVideo = () => {
             />
           ) : (
             <div
-              className="h-full"
+              className="h-full max-h-screen"
               ref={videoParentRef}
               dangerouslySetInnerHTML={{
                 __html: `
