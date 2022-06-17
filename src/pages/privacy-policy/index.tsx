@@ -24,7 +24,7 @@ const Highlights = () => {
       title: 'Privacy Policy',
       subtitle: 'Effective date: May 13, 2022',
       description: `<div>
-      <p class="text-center py-10">
+      <p class="text-center">
         <strong>Effective date: May 13, 2022</strong>
       </p>
       <p>
@@ -225,7 +225,7 @@ const Highlights = () => {
                   when={state.isReady}
                   key={idx}
                 >
-                  <div className="relative flex flex-col justify-center items-center gap-1 lg:gap-12">
+                  <div className="relative flex flex-col justify-center items-center gap-1 lg:gap-2">
                     <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:leading-[80px] font-semibold mb-0 tracking-tight text-center">
                       {item.title}
                     </h1>
