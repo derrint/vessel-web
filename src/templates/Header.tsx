@@ -46,9 +46,9 @@ const Header = () => {
   return (
     <Background
       color={
-        fullPage?.activeSection && fullPage?.activeSection !== 'welcome'
-          ? 'bg-white'
-          : 'bg-transparent'
+        fullPage?.activeSection && fullPage?.activeSection === 'welcome'
+          ? 'bg-transparent'
+          : 'bg-white'
       }
       className={`fixed top-0 w-full z-10 transition-all duration-300 ${
         state.isAnimationDone ? '' : ''
