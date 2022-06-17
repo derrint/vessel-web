@@ -7,7 +7,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import {
   SplashScreen,
   BannerWelcome,
-  BannerVideo,
+  // BannerVideo,
   BannerCTA,
   Highlights,
   Features,
@@ -20,7 +20,7 @@ import { Footer } from '@templates/Footer';
 const Home = () => {
   const anchors = [
     'welcome',
-    'vessel',
+    // 'vessel',
     'get-started',
     'features-seamless',
     'features-stacked',
@@ -89,9 +89,9 @@ const Home = () => {
               <div className="section">
                 <BannerWelcome />
               </div>
-              <div className="section">
+              {/* <div className="section">
                 <BannerVideo />
-              </div>
+              </div> */}
               <div className="section">
                 <BannerCTA />
               </div>
