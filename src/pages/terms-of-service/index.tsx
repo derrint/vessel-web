@@ -24,7 +24,7 @@ const Highlights = () => {
       title: 'Terms of Service',
       subtitle: 'Effective date: May 13, 2022',
       description: `<div>
-      <p class="text-center">
+      <p class="text-center py-10">
         <strong>Effective date: May 13, 2022</strong>
       </p>
       <p>These Terms of Service (the &ldquo;Terms&rdquo;) and our Privacy Policy available at <a href="https://www.getvessel.io/post/vessel-privacy-policy" target="_blank" rel="noopener noreferrer" data-hook="linkViewer">

@@ -8,7 +8,7 @@ const Footer = () => {
     {
       id: 1,
       label: 'Privacy Policy',
-      href: '/',
+      href: '/privacy-policy',
     },
     {
       id: 2,
