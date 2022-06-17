@@ -13,7 +13,7 @@ const Footer = () => {
     {
       id: 2,
       label: 'Terms of Service',
-      href: '/',
+      href: '/terms-of-service',
     },
   ];
 
@@ -32,7 +32,7 @@ const Footer = () => {
               {menus.map((item: any) => {
                 return (
                   <li key={item.id}>
-                    <Link href="/">
+                    <Link href={item.href}>
                       <a className="font-medium text-base">{item.label}</a>
                     </Link>
                   </li>
