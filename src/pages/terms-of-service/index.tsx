@@ -400,12 +400,23 @@ const Highlights = () => {
     </div>`,
     },
   ];
+
+  React.useEffect(() => {
+    if (state.isReady) {
+      setTimeout(() => {
+        document.querySelector('body')?.classList.remove('overflow-hidden');
+      }, 1250);
+    }
+
+    return () => {};
+  }, [state.isReady]);
+
   return (
     <>
       <Fade bottom duration={750} delay={250} when={state.isReady}>
         <Background color="bg-white" className="overflow-hidden">
           <Section className="mt-[64px] md:mt-[80px] lg:mt-[84px]">
-            <div className="flex flex-col gap-32">
+            <div className="flex flex-col gap-32 max-w-3xl mx-auto">
               {highlights.map((item: any, idx: number) => (
                 <Fade
                   bottom
