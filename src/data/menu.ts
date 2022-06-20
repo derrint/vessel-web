@@ -5,7 +5,7 @@ const menus = [
     href: '/#features',
     isDesktop: true,
     isMobile: true,
-    goToSectionIndex: 4,
+    goToSectionIndex: 3,
   },
   // {
   //   id: 2,
@@ -29,6 +29,32 @@ const menus = [
     isExternalLink: true,
     isDesktop: true,
     isMobile: true,
+  },
+  {
+    id: 5,
+    label: 'More',
+    // href: '/#features',
+    isDesktop: true,
+    isMobile: true,
+    // goToSectionIndex: 4,
+    submenus: [
+      {
+        id: 'faq',
+        label: 'FAQ',
+        href: '/#faq',
+        goToSectionIndex: 9,
+      },
+      {
+        id: 'pp',
+        label: 'Privacy Policy',
+        href: '/privacy-policy',
+      },
+      {
+        id: 'tos',
+        label: 'Terms of Service',
+        href: '/terms-of-service',
+      },
+    ],
   },
 ];
 

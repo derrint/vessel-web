@@ -4,7 +4,7 @@ import React from 'react';
 
 import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { Fade } from 'react-reveal';
 
@@ -89,11 +89,27 @@ const Header = () => {
                       <DropdownMenu
                         title={label}
                         items={submenus}
-                        onChange={() => {}}
-                        showPreview
-                        classNames={{ itemsWrapper: '!mt-4 !rounded-xl' }}
+                        onChange={(v: any) => {
+                          const currentSubmenu = submenus.find(
+                            (x: any) => x.id === v
+                          );
+                          if (
+                            router.pathname === '/' &&
+                            currentSubmenu.goToSectionIndex
+                          ) {
+                            fullPage.methods.moveTo(
+                              currentSubmenu.goToSectionIndex
+                            );
+                          } else {
+                            Router.push(currentSubmenu?.href as any);
+                          }
+                        }}
+                        classNames={{
+                          itemsWrapper: '!mt-4 !rounded-xl',
+                          button: 'font-medium',
+                        }}
                       />
-                    ) : goToSectionIndex ? (
+                    ) : router.pathname === '/' && goToSectionIndex ? (
                       <a
                         className={`text-base font-medium hover:text-primary flex items-center cursor-pointer ${
                           isButton
