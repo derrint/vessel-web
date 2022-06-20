@@ -46,7 +46,8 @@ const Header = () => {
   return (
     <Background
       color={
-        fullPage?.activeSection && fullPage?.activeSection === 'welcome'
+        fullPage?.activeSection === undefined ||
+        fullPage?.activeSection === 'welcome'
           ? 'bg-transparent'
           : 'bg-white'
       }
