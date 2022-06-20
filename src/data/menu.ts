@@ -35,7 +35,7 @@ const menus = [
     label: 'More',
     // href: '/#features',
     isDesktop: true,
-    isMobile: true,
+    isMobile: false,
     // goToSectionIndex: 4,
     submenus: [
       {
@@ -55,6 +55,31 @@ const menus = [
         href: '/terms-of-service',
       },
     ],
+  },
+  {
+    id: 6,
+    label: 'FAQ',
+    href: '/#faq',
+    goToSectionIndex: 9,
+    isExternalLink: false,
+    isDesktop: false,
+    isMobile: true,
+  },
+  {
+    id: 7,
+    label: 'Privacy Policy',
+    href: '/privacy-policy',
+    isExternalLink: false,
+    isDesktop: false,
+    isMobile: true,
+  },
+  {
+    id: 8,
+    label: 'Terms of Service',
+    href: '/terms-of-service',
+    isExternalLink: false,
+    isDesktop: false,
+    isMobile: true,
   },
 ];
 
