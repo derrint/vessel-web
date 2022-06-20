@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
-import { Fade } from 'react-reveal';
+import { Fade, Flip } from 'react-reveal';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
@@ -66,7 +66,22 @@ const BannerWelcome = () => {
         </div>
       </Fade>
 
-      <Section className="relative z-[1]">
+      <Flip
+        right
+        duration={750}
+        delay={250}
+        when={state.isReady && state.isSplashScreenDone}
+      >
+        <div className="flex justify-center mt-12">
+          <img
+            src="/assets/images/logos/logo-token.png"
+            alt=""
+            className="w-12 sm:w-16 md:w-20 lg:w-24 shadow-md rounded-full"
+          />
+        </div>
+      </Flip>
+
+      <Section className="relative z-[1] !pt-4 sm:!pt-6 lg:!pt-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold lg:leading-[72px] tracking-tight whitespace-pre-line z-[2] text-center">
           {firstTexts.map((txt: any, idx: number) => {
             return (
