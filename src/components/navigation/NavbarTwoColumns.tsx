@@ -42,7 +42,12 @@ const NavbarTwoColumns = (props: INavbarProps) => {
           title={<FiMenu size={24} />}
           items={menusMapped}
           onChange={(v: any) => {
-            Router.push(menus.find((x) => x.id === v)?.href as any);
+            const clickedMenu = menus.find((x) => x.id === v);
+            if (clickedMenu?.isExternalLink) {
+              window.open(clickedMenu?.href);
+            } else {
+              Router.push(clickedMenu?.href as any);
+            }
           }}
           classNames={{
             wrapper: 'md:hidden flex',
