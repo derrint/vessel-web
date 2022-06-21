@@ -2,10 +2,17 @@ const menus = [
   {
     id: 1,
     label: 'Features',
-    href: '/#features',
+    href: '/#features-seamless',
     isDesktop: true,
-    isMobile: true,
+    isMobile: false,
     goToSectionIndex: 3,
+  },
+  {
+    id: 2,
+    label: 'Features',
+    href: '/#section-features',
+    isDesktop: false,
+    isMobile: true,
   },
   // {
   //   id: 2,
@@ -59,7 +66,7 @@ const menus = [
   {
     id: 6,
     label: 'FAQ',
-    href: '/#faq',
+    href: '/#section-faq',
     goToSectionIndex: 9,
     isExternalLink: false,
     isDesktop: false,

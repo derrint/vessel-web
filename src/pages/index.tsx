@@ -83,12 +83,14 @@ const Home = () => {
         <div className="section">
           <BannerCTA />
         </div>
-        <Features />
+        <div id="section-features">
+          <Features />
+        </div>
         <Highlights />
         <div className="section">
           <ContactUs />
         </div>
-        <div className="section">
+        <div className="section" id="section-faq">
           <FAQ />
         </div>
       </MobileView>
