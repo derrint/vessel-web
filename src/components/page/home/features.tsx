@@ -48,7 +48,7 @@ const Features = () => {
           </Pulse>
         </div>
 
-        <div className="absolute bottom-0 lg:bottom-2 -right-5 lg:-right-10 w-[52%] lg:w-[200px]">
+        <div className="absolute bottom-0 lg:bottom-2 -right-1 lg:-right-10 w-[52%] lg:w-[200px]">
           <Pulse forever delay={200} duration={1500}>
             <img
               src="/assets/images/illustrations/illustration-seamless-3.png"
@@ -252,7 +252,7 @@ const Features = () => {
     <>
       {features.map((item: any, idx: number) => (
         <div key={idx} className="section">
-          <Section>
+          <Section className="mt-[64px] md:mt-[80px] lg:mt-[84px]">
             <div className="relative flex flex-col justify-center z-[1] gap-20">
               <div
                 className={`flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-20 xl:gap-36 items-center ${

@@ -49,22 +49,22 @@ const BannerWelcome = () => {
 
   return (
     <Background
-      color="bg-white relative"
-      className="h-full flex flex-col justify-center"
+      color="bg-white"
+      className="relative h-full flex flex-col justify-center mt-[64px] md:mt-[80px] lg:mt-[84px]"
     >
-      <Fade
-        duration={3750}
-        delay={250}
-        when={state.isReady && state.isSplashScreenDone}
-        cascade
-      >
-        <div className="w-full flex justify-center">
-          <div className="absolute z-[1] top-0 sm:-top-[10%] md:-top-[20%] lg:-top-[50%] flex h-full">
-            <div className="bg-secondary/30 rounded-full h-80 lg:h-[600px] aspect-square blur-[120px] lg:blur-[240px]"></div>
-            <div className="bg-primary/30 rounded-full h-80 lg:h-[600px] aspect-square blur-[120px] lg:blur-[240px]"></div>
+      <div className="absolute z-[1] top-0 sm:-top-[10%] md:-top-[20%] lg:-top-[50%] flex h-full w-full">
+        <Fade
+          duration={3750}
+          delay={250}
+          when={state.isReady && state.isSplashScreenDone}
+          cascade
+        >
+          <div className="w-full flex justify-center">
+            <div className="bg-secondary/30 rounded-full h-40 sm:h-80 lg:h-[600px] aspect-square blur-[60px] sm:blur-[120px] lg:blur-[240px] w-1/2"></div>
+            <div className="bg-primary/30 rounded-full h-40 sm:h-80 lg:h-[600px] aspect-square blur-[60px] sm:blur-[120px] lg:blur-[240px] w-1/2"></div>
           </div>
-        </div>
-      </Fade>
+        </Fade>
+      </div>
 
       <Flip
         right

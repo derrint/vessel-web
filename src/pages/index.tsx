@@ -3,6 +3,7 @@ import React from 'react';
 
 import ReactFullpage from '@fullpage/react-fullpage';
 import { Player } from '@lottiefiles/react-lottie-player';
+import { BrowserView, MobileView, isMobile } from 'react-device-detect';
 
 import {
   SplashScreen,
@@ -50,7 +51,9 @@ const Home = () => {
 
       <button
         className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-[1] transition-all duration-150 ${
-          activeSection === 'welcome'
+          (fullPage?.activeSection === undefined ||
+            activeSection === 'welcome') &&
+          !isMobile
             ? 'opacity-100 visible'
             : 'opacity-0 invisible'
         }`}
@@ -73,43 +76,63 @@ const Home = () => {
         </span>
       </button>
 
-      <ReactFullpage
-        scrollingSpeed={750}
-        anchors={anchors}
-        onLeave={(_, destination) => {
-          setActiveSection(destination.anchor);
-          setFullPage({ ...fullPage, activeSection: destination.anchor });
-        }}
-        scrollOverflow
-        render={({ fullpageApi }) => {
-          setFPA(fullpageApi);
+      <MobileView>
+        <div className="section">
+          <BannerWelcome />
+        </div>
+        <div className="section">
+          <BannerCTA />
+        </div>
+        <Features />
+        <Highlights />
+        <div className="section">
+          <ContactUs />
+        </div>
+        <div className="section">
+          <FAQ />
+        </div>
+      </MobileView>
 
-          return (
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <BannerWelcome />
-              </div>
-              {/* <div className="section">
+      <BrowserView>
+        <ReactFullpage
+          scrollingSpeed={750}
+          anchors={anchors}
+          onLeave={(_, destination) => {
+            setActiveSection(destination.anchor);
+            setFullPage({ ...fullPage, activeSection: destination.anchor });
+          }}
+          autoScrolling={!isMobile}
+          scrollOverflow
+          render={({ fullpageApi }) => {
+            setFPA(fullpageApi);
+
+            return (
+              <ReactFullpage.Wrapper>
+                <div className="section">
+                  <BannerWelcome />
+                </div>
+                {/* <div className="section">
                 <BannerVideo />
               </div> */}
-              <div className="section">
-                <BannerCTA />
-              </div>
-              <Features />
-              <Highlights />
-              <div className="section">
-                <ContactUs />
-              </div>
-              <div className="section">
-                <FAQ />
-              </div>
-              <div className="section fp-auto-height">
-                <Footer />
-              </div>
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
+                <div className="section">
+                  <BannerCTA />
+                </div>
+                <Features />
+                <Highlights />
+                <div className="section">
+                  <ContactUs />
+                </div>
+                <div className="section">
+                  <FAQ />
+                </div>
+                <div className="section fp-auto-height">
+                  <Footer />
+                </div>
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
+      </BrowserView>
     </>
   );
 };

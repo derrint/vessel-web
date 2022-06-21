@@ -27,14 +27,16 @@ const BannerCTA = () => {
 
   return (
     <Background color="bg-white">
-      <Section className={`relative ${styles.floating_wrapper}`}>
+      <Section
+        className={`relative mt-[64px] md:mt-[80px] lg:mt-[84px] ${styles.floating_wrapper}`}
+      >
         <Fade duration={750} delay={0} when={state.isReady}>
           <div className="flex justify-center">
             <div className="relative">
               <img
                 src="/assets/images/illustrations/illustration-main-bg.png"
                 alt=""
-                className="w-full max-w-sm sm:max-w-lg"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
               />
 
               <Zoom when={state.isReady} duration={500} delay={200}>
