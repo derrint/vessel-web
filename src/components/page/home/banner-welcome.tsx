@@ -50,7 +50,7 @@ const BannerWelcome = () => {
   return (
     <Background
       color="bg-white"
-      className="relative h-full flex flex-col justify-center mt-[64px] md:mt-[80px] lg:mt-[84px]"
+      className="relative h-full flex flex-col justify-center"
     >
       <div className="absolute z-[1] top-0 sm:-top-[10%] md:-top-[20%] lg:-top-[50%] flex h-full w-full">
         <Fade
