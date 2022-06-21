@@ -10,6 +10,7 @@
     padding: 0;    
     transition: transform 0.2s;
     transform-origin: 50% 0;
+    -moz-transform-origin: 50% 50%;
     transform-style: preserve-3d;
     // background: #6151FF;
     // color: #6151FF;
@@ -33,6 +34,7 @@
   
   span.showed {
     transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-32px);
   }
   
   // span.showed:before {
