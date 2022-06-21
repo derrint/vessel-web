@@ -49,6 +49,31 @@ const Home = () => {
     <>
       <SplashScreen />
 
+      <button
+        className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-[1] transition-all duration-150 ${
+          fullPage?.activeSection === undefined || activeSection === 'welcome'
+            ? 'opacity-100 visible'
+            : 'opacity-0 invisible'
+        }`}
+        onClick={() => {
+          FPA.moveSectionDown();
+        }}
+      >
+        <Player
+          autoplay
+          loop
+          src="/assets/93440-scroll-down.json"
+          style={{ height: '60px', width: '60px' }}
+        />
+        <span
+          className={`text-sm transition-all duration-150 ${
+            activeSection === 'contact-us' ? 'text-white/80' : 'text-black/80'
+          }`}
+        >
+          scroll for more
+        </span>
+      </button>
+
       <MobileView>
         <div className="section">
           <BannerWelcome />
@@ -67,31 +92,6 @@ const Home = () => {
       </MobileView>
 
       <BrowserView>
-        <button
-          className={`absolute bottom-5 left-1/2 -translate-x-1/2 z-[1] transition-all duration-150 ${
-            fullPage?.activeSection === undefined || activeSection === 'welcome'
-              ? 'opacity-100 visible'
-              : 'opacity-0 invisible'
-          }`}
-          onClick={() => {
-            FPA.moveSectionDown();
-          }}
-        >
-          <Player
-            autoplay
-            loop
-            src="/assets/93440-scroll-down.json"
-            style={{ height: '60px', width: '60px' }}
-          />
-          <span
-            className={`text-sm transition-all duration-150 ${
-              activeSection === 'contact-us' ? 'text-white/80' : 'text-black/80'
-            }`}
-          >
-            scroll for more
-          </span>
-        </button>
-
         <ReactFullpage
           scrollingSpeed={750}
           anchors={anchors}

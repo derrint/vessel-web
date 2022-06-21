@@ -73,7 +73,7 @@ const BannerWelcome = () => {
           delay={250}
           when={state.isReady && state.isSplashScreenDone}
         >
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center">
             <img
               src="/assets/images/logos/logo-token.png"
               alt=""
