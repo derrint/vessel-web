@@ -6,8 +6,7 @@ import { Fade, Zoom } from 'react-reveal';
 import Pulse from 'react-reveal/Pulse';
 
 import { Section } from '@components/layout';
-
-import styles from '../../../styles/components/page/home/features.module.scss';
+import styles from '@styles/components/page/home/features.module.scss';
 
 const Features = () => {
   const [state, setState] = React.useState({
@@ -49,7 +48,7 @@ const Features = () => {
           </Pulse>
         </div>
 
-        <div className="absolute bottom-0 lg:bottom-2 -right-5 lg:-right-10 w-[52%] lg:w-[200px]">
+        <div className="absolute bottom-0 lg:bottom-2 -right-1 lg:-right-10 w-[52%] lg:w-[200px]">
           <Pulse forever delay={200} duration={1500}>
             <img
               src="/assets/images/illustrations/illustration-seamless-3.png"
@@ -250,64 +249,67 @@ const Features = () => {
   ];
 
   return (
-    <Section id="features">
-      <div className="relative flex flex-col justify-center z-[1] gap-20">
-        {features.map((item: any, idx: number) => (
-          <div
-            key={idx}
-            className={`flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-20 xl:gap-36 items-center ${
-              idx % 2 === 0 ? 'sm:flex-row-reverse' : ''
-            }`}
-          >
-            <Fade
-              bottom
-              duration={750}
-              delay={250}
-              when={state.isReady}
-              cascade
-            >
-              <div className="w-full sm:w-7/12 lg:w-1/2">
-                <h3 className="text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-5 tracking-tight xl:leading-[60px]">
-                  {item.title}
-                </h3>
+    <>
+      {features.map((item: any, idx: number) => (
+        <div key={idx} className="section">
+          <Section className="mt-[64px] md:mt-[80px] lg:mt-[84px]">
+            <div className="relative flex flex-col justify-center z-[1] gap-20">
+              <div
+                className={`flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-20 xl:gap-36 items-center ${
+                  idx % 2 === 0 ? 'sm:flex-row-reverse' : ''
+                }`}
+              >
+                <Fade
+                  bottom
+                  duration={750}
+                  delay={250}
+                  when={state.isReady}
+                  cascade
+                >
+                  <div className="w-full sm:w-7/12 lg:w-1/2">
+                    <h3 className="text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-5 tracking-tight xl:leading-[60px]">
+                      {item.title}
+                    </h3>
 
-                <p className="text-base lg:text-lg lg:leading-7 text-black/80 whitespace-pre-line">
-                  {item.description}
-                  {item.extras && (
-                    <div className="mt-4">
-                      {item.extras.map((extra: any, idx2: number) => (
-                        <div key={idx2} className="flex items-start gap-3">
-                          {item.extras.length > 1 && (
-                            <div className="my-[6px] text-primary">
-                              <ArrowRight strokeWidth={3} size={16} />
+                    <p className="text-base lg:text-lg lg:leading-7 text-black/80 whitespace-pre-line">
+                      {item.description}
+                      {item.extras && (
+                        <div className="mt-4">
+                          {item.extras.map((extra: any, idx2: number) => (
+                            <div key={idx2} className="flex items-start gap-3">
+                              {item.extras.length > 1 && (
+                                <div className="my-[6px] text-primary">
+                                  <ArrowRight strokeWidth={3} size={16} />
+                                </div>
+                              )}
+                              {extra.label}
+                              <img src={extra.asset} alt="" className="h-8" />
                             </div>
-                          )}
-                          {extra.label}
-                          <img src={extra.asset} alt="" className="h-8" />
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  )}
-                </p>
+                      )}
+                    </p>
+                  </div>
+                </Fade>
+                <Fade bottom duration={750} delay={250} when={state.isReady}>
+                  <div className="w-full sm:w-5/12 lg:w-1/2 flex justify-center">
+                    {item.component ? (
+                      item.component
+                    ) : (
+                      <img
+                        src={item.asset}
+                        alt=""
+                        className="w-full max-w-sm sm:max-w-none"
+                      />
+                    )}
+                  </div>
+                </Fade>
               </div>
-            </Fade>
-            <Fade bottom duration={750} delay={250} when={state.isReady}>
-              <div className="w-full sm:w-5/12 lg:w-1/2 flex justify-center">
-                {item.component ? (
-                  item.component
-                ) : (
-                  <img
-                    src={item.asset}
-                    alt=""
-                    className="w-full max-w-sm sm:max-w-none"
-                  />
-                )}
-              </div>
-            </Fade>
-          </div>
-        ))}
-      </div>
-    </Section>
+            </div>
+          </Section>
+        </div>
+      ))}
+    </>
   );
 };
 

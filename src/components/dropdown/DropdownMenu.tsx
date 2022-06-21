@@ -8,6 +8,7 @@ type IClassNames = {
   button?: string;
   itemsWrapper?: string;
   items?: string;
+  itemText?: string;
 };
 
 type IDropdownMenuProps = {
@@ -28,7 +29,7 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
       className={`inline-block text-left ${props.classNames?.wrapper}`}
     >
       <Menu.Button
-        className={`inline-flex gap-2 lg:gap-3 justify-between w-full text-base lg:text-lg focus:outline-none whitespace-nowrap hover:text-primary group items-center ${props.classNames?.button}`}
+        className={`inline-flex gap-2 lg:gap-3 justify-between w-full text-base focus:outline-none whitespace-nowrap hover:text-primary group items-center ${props.classNames?.button}`}
       >
         {props.title}
         {typeof props.title === 'string' && (
@@ -47,7 +48,7 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className={`absolute z-10 right-0 mx-4 sm:mx-8 mt-2 py-2 origin-top bg-white divide-y divide-gray-100 rounded-xl shadow-lg  focus:outline-none flex min-w-max ${props.classNames?.itemsWrapper}`}
+          className={`absolute z-10 right-0 mx-4 sm:mx-8 mt-2 py-3 origin-top bg-white divide-y divide-gray-100 rounded-xl shadow-lg  focus:outline-none flex min-w-max ${props.classNames?.itemsWrapper}`}
         >
           {props.showPreview && (
             <div className="flex justify-center items-center px-12 lg:px-20">
@@ -74,7 +75,9 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
                     <button
                       className={`${
                         active ? 'text-primary' : 'text-black'
-                      } group flex rounded-md items-center w-full px-4 py-2 lg:py-3 text-base lg:text-lg whitespace-nowrap `}
+                      } group flex rounded-md items-center w-full px-4 py-1 text-base whitespace-nowrap ${
+                        props.classNames?.itemText
+                      }`}
                       onClick={() => props.onChange(item.id)}
                       onMouseEnter={() => {
                         setPreviewImage(item?.asset?.illustration);
@@ -84,6 +87,7 @@ const DropdownMenu = (props: IDropdownMenuProps) => {
                       }}
                     >
                       {item.label}
+                      {item.icon && <div className="ml-2">{item.icon}</div>}
                     </button>
                   )}
                 </Menu.Item>

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { CopyBlock, Code, atomOneLight } from 'react-code-blocks';
 import { Fade } from 'react-reveal';
 
-import { Background } from '@components/background';
 import { Section } from '@components/layout';
 
 function classNames(...classes: any) {
@@ -255,59 +254,58 @@ end`}
   ];
 
   return (
-    <Background color="bg-white" className="overflow-hidden">
-      <Section id="highlights">
-        <div className="flex flex-col gap-24">
-          {highlights.map((item: any, idx: number) => (
-            <div
-              key={idx}
-              className="relative flex flex-col justify-center items-center text-center gap-3 lg:gap-4"
-            >
-              <Fade bottom duration={750} delay={250}>
-                <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight">
-                  {item.title}
-                </h1>
-              </Fade>
-              <Fade bottom duration={750} delay={250}>
-                <p className="lg:text-lg lg:w-2/3 lg:leading-7 text-black/80 whitespace-pre-line">
-                  {item.description}
-                </p>
-              </Fade>
+    <>
+      {highlights.map((item: any, idx: number) => (
+        <div key={idx} className="section">
+          <Section className="mt-[64px] md:mt-[80px] lg:mt-[84px]">
+            <div className="flex flex-col gap-24">
+              <div className="relative flex flex-col justify-center items-center text-center gap-3 lg:gap-4">
+                <Fade bottom duration={750} delay={250}>
+                  <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight">
+                    {item.title}
+                  </h1>
+                </Fade>
+                <Fade bottom duration={750} delay={250}>
+                  <p className="lg:text-lg lg:w-2/3 lg:leading-7 text-black/80 whitespace-pre-line">
+                    {item.description}
+                  </p>
+                </Fade>
 
-              <Fade bottom duration={750} delay={250}>
-                <div className="mt-8 flex flex-col items-center gap-8">
-                  {item.component ? (
-                    item.component
-                  ) : (
-                    <img
-                      src={item.asset}
-                      alt=""
-                      className="w-full max-w-3xl aspect-auto"
-                    />
-                  )}
+                <Fade bottom duration={750} delay={250}>
+                  <div className="mt-8 flex flex-col items-center gap-8">
+                    {item.component ? (
+                      item.component
+                    ) : (
+                      <img
+                        src={item.asset}
+                        alt=""
+                        className="w-full max-w-3xl aspect-auto"
+                      />
+                    )}
 
-                  {item.link && (
-                    <Link href={item.link.href} passHref>
-                      <a
-                        className="flex items-center text-primary"
-                        target="_blank"
-                      >
-                        {item.link.label}
-                        {item.link.isExternal && (
-                          <div className="ml-2">
-                            <LinkOut strokeWidth={3} size={16} />
-                          </div>
-                        )}
-                      </a>
-                    </Link>
-                  )}
-                </div>
-              </Fade>
+                    {item.link && (
+                      <Link href={item.link.href} passHref>
+                        <a
+                          className="flex items-center text-primary"
+                          target="_blank"
+                        >
+                          {item.link.label}
+                          {item.link.isExternal && (
+                            <div className="ml-2">
+                              <LinkOut strokeWidth={3} size={16} />
+                            </div>
+                          )}
+                        </a>
+                      </Link>
+                    )}
+                  </div>
+                </Fade>
+              </div>
             </div>
-          ))}
+          </Section>
         </div>
-      </Section>
-    </Background>
+      ))}
+    </>
   );
 };
 

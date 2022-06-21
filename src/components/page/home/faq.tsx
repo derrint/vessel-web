@@ -91,7 +91,7 @@ const Highlights = () => {
 
   return (
     <Background color="bg-white" className="overflow-hidden">
-      <Section id="faq">
+      <Section className="mt-[64px] md:mt-[80px] lg:mt-[84px]">
         <Fade bottom duration={750} delay={250}>
           <h1 className="text-3xl lg:text-4xl xl:text-5xl xl:leading-[60px] font-medium mb-0 tracking-tight text-center">
             Frequently Asked Question
@@ -116,7 +116,7 @@ const Highlights = () => {
                         <div>
                           <ChevronUpIcon
                             className={`${
-                              open ? 'rotate-180 transform' : ''
+                              open ? '' : 'rotate-180 transform'
                             } h-5 w-5 text-primary`}
                           />
                         </div>

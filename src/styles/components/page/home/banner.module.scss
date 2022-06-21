@@ -40,31 +40,18 @@
   // } 
 }
 
-.splashScreen {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(182.49deg, #3D7BFF 4.17%, #6734FF 47.97%);
-  height: 100vh;
-  width: 100vw;
-  animation: lift 0.5s ease-in-out;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  
-  @keyframes lift {
-    0% {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-      visibility: visible;
-    }
-    100% {
-      transform: translate3d(0, -100%, 0);
-      opacity: 1;
-      visibility: hidden;
+.bg {
+  height: 100%;
+
+  .playerWrapper {
+    position: relative;
+    height: 100%;
+
+    .video {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      max-height: 100vh;
     }
   }
 }

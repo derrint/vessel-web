@@ -8,12 +8,12 @@ const Footer = () => {
     {
       id: 1,
       label: 'Privacy Policy',
-      href: '/',
+      href: '/privacy-policy',
     },
     {
       id: 2,
       label: 'Terms of Service',
-      href: '/',
+      href: '/terms-of-service',
     },
   ];
 
@@ -24,16 +24,16 @@ const Footer = () => {
           <img
             src="/assets/images/logos/logo.png"
             alt=""
-            className="h-10 aspect-auto"
+            className="h-8 sm:h-10 aspect-auto"
           />
 
           <nav className="">
-            <ul className="navbar flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-10 justify-start lg:justify-end items-start sm:items-center font-medium text-xl text-gray-800">
+            <ul className="navbar flex flex-row gap-4 sm:gap-8 lg:gap-10 justify-start lg:justify-end items-start sm:items-center text-xl text-gray-800">
               {menus.map((item: any) => {
                 return (
                   <li key={item.id}>
-                    <Link href="/">
-                      <a className="font-medium text-base">{item.label}</a>
+                    <Link href={item.href}>
+                      <a className="text-sm sm:text-base">{item.label}</a>
                     </Link>
                   </li>
                 );
@@ -41,7 +41,7 @@ const Footer = () => {
             </ul>
           </nav>
 
-          <p className="text-base text-black/40">
+          <p className="text-sm sm:text-base text-black/40">
             &copy; 2022 Vessel. All Rights Reserved.
           </p>
         </div>

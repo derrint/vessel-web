@@ -21,3 +21,11 @@ export const hideModal = async (context: any) => {
     isVisible: false,
   };
 };
+
+export const setFullPage = async (context: any, payload: object) => {
+  context.state.plugins.fullPage = payload;
+};
+
+export const setYScrollPosition = async (context: any, payload: number) => {
+  context.state.yScrollPosition = payload;
+};

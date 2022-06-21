@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { LinkOut } from 'akar-icons';
 import Link from 'next/link';
 import Router from 'next/router';
 import { FiMenu } from 'react-icons/fi';
@@ -12,30 +13,52 @@ type INavbarProps = {
   children: ReactNode;
 };
 
-const NavbarTwoColumns = (props: INavbarProps) => (
-  <div className="flex flex-wrap justify-between items-center">
-    <div>
-      <Link href="/">
-        <a>{props.logo}</a>
-      </Link>
-    </div>
+const NavbarTwoColumns = (props: INavbarProps) => {
+  const LinkOutIcon = <LinkOut strokeWidth={3} size={16} />;
 
-    <nav>
-      <ul className="navbar hidden md:flex items-center text-xl gap-4 lg:gap-8">
-        {props.children}
-      </ul>
+  const menusMapped = menus
+    .filter((x) => x.isMobile)
+    .map((item) => {
+      return {
+        ...item,
+        icon: item.isExternalLink ? LinkOutIcon : null,
+      };
+    });
 
-      <DropdownMenu
-        title={<FiMenu size={24} />}
-        items={menus.filter((x) => x.isMobile)}
-        onChange={(v: any) => {
-          Router.push(menus.find((x) => x.id === v)?.href as any);
-        }}
-        classNames={{ wrapper: 'md:hidden' }}
-      />
-    </nav>
+  return (
+    <div className="flex flex-wrap justify-between items-center">
+      <div>
+        <Link href="/">
+          <a>{props.logo}</a>
+        </Link>
+      </div>
 
-    {/* <style jsx>
+      <nav>
+        <ul className="navbar hidden md:flex items-center text-xl gap-4 lg:gap-8">
+          {props.children}
+        </ul>
+
+        <DropdownMenu
+          title={<FiMenu size={24} />}
+          items={menusMapped}
+          onChange={(v: any) => {
+            const clickedMenu = menus.find((x) => x.id === v);
+            if (clickedMenu?.isExternalLink) {
+              window.open(clickedMenu?.href);
+            } else {
+              Router.push(clickedMenu?.href as any);
+            }
+          }}
+          classNames={{
+            wrapper: 'md:hidden flex',
+            itemsWrapper: 'w-full !m-0 top-[64px] left-0 rounded-none',
+            items: 'gap-2 flex flex-col',
+            itemText: 'font-bold',
+          }}
+        />
+      </nav>
+
+      {/* <style jsx>
       {`
         .navbar :global(li:not(:first-child)) {
           @apply mt-0;
@@ -46,7 +69,8 @@ const NavbarTwoColumns = (props: INavbarProps) => (
         }
       `}
     </style> */}
-  </div>
-);
+    </div>
+  );
+};
 
 export { NavbarTwoColumns };

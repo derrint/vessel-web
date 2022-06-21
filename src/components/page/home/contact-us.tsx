@@ -32,7 +32,7 @@ const ContactUs = () => {
         <Section
           id="contact"
           yPadding="py-16 lg:py-24 xl:py-32"
-          className="z-[1]"
+          className="z-[1] mt-[64px] md:mt-[80px] lg:mt-[84px]"
         >
           <Fade bottom duration={750} delay={250} cascade>
             <form action="https://formspree.io/f/mwkyzpjq" method="POST">

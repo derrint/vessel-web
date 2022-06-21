@@ -11,8 +11,7 @@ import { Fade, Flip, Zoom } from 'react-reveal';
 
 import { Background } from '@components/background';
 import { Section } from '@components/layout';
-
-import styles from '../../../styles/components/page/home/banner.module.scss';
+import styles from '@styles/components/page/home/banner.module.scss';
 
 const Banner = () => {
   const text = {
@@ -64,7 +63,7 @@ const Banner = () => {
         />
       </div>
 
-      <Section className="relative z-[1]">
+      <Section className="relative z-[1] h-screen">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold lg:leading-[72px] tracking-tight whitespace-pre-line z-[2] text-center">
           {firstTexts.map((txt: any, idx: number) => {
             return (
@@ -86,21 +85,6 @@ const Banner = () => {
             );
           })}
         </h1>
-
-        <Flip
-          right
-          duration={750}
-          delay={250}
-          when={state.isReady && state.isSplashScreenDone}
-        >
-          <div className="flex justify-center mt-12">
-            <img
-              src="/assets/images/logos/logo-token.png"
-              alt=""
-              className="w-[120px] shadow-md rounded-full"
-            />
-          </div>
-        </Flip>
 
         <Fade
           duration={3750}
@@ -154,6 +138,23 @@ const Banner = () => {
             className="absolute right-1/4 bottom-2 sm:bottom-10 w-20 sm:w-[120px] -z-[1]"
           />
         </Fade>
+      </Section>
+
+      <Section className="relative h-screen">
+        <Flip
+          right
+          duration={750}
+          delay={250}
+          when={state.isReady && state.isSplashScreenDone}
+        >
+          <div className="flex justify-center mt-12">
+            <img
+              src="/assets/images/logos/logo-token.png"
+              alt=""
+              className="w-[120px] shadow-md rounded-full"
+            />
+          </div>
+        </Flip>
       </Section>
 
       <Section className={`relative ${styles.floating_wrapper}`}>
