@@ -27,8 +27,8 @@ const Highlights = () => {
       <p class="text-center">
         <strong>Effective date: May 13, 2022</strong>
       </p>
-      <p>These Terms of Service (the &ldquo;Terms&rdquo;) and our Privacy Policy available at <a href="https://www.getvessel.io/post/vessel-privacy-policy" target="_blank" rel="noopener noreferrer" data-hook="linkViewer">
-          <u>https://www.getvessel.io/post/vessel-privacy-policy</u>
+      <p>These Terms of Service (the &ldquo;Terms&rdquo;) and our Privacy Policy available <a href="https://www.getvessel.io/post/vessel-privacy-policy" target="_blank" rel="noopener noreferrer" data-hook="linkViewer">
+          <u>here</u>
         </a> govern the relationship between you and OpenVessel Technologies, LLC (&ldquo;OpenVessel&rdquo;, &ldquo;our&rdquo;, &ldquo;we&rdquo; or &ldquo;us&rdquo;) relating in any way to your use of our Services. &ldquo;Services&rdquo; means our website <a href="https://www.getvessel.io/" target="_blank" rel="noopener noreferrer" data-hook="linkViewer">
           <u>https://www.getvessel.io</u>
         </a>/ (the &ldquo;Website&rdquo;), the Vessel app (&ldquo;Vessel&rdquo; or the &ldquo;App&rdquo;) and any related services and content. </p>
