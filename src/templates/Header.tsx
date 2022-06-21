@@ -13,10 +13,12 @@ import { DropdownMenu } from '@components/dropdown';
 import { Section } from '@components/layout';
 import { NavbarTwoColumns } from '@components/navigation/NavbarTwoColumns';
 import { menus } from '@data/index';
-import { useState } from '@overmind/index';
+import { useActions, useState } from '@overmind/index';
 
 const Header = () => {
   const router = useRouter();
+  const { plugins, yScrollPosition } = useState();
+  const { setYScrollPosition } = useActions();
 
   const [state, setState] = React.useState({
     isReady: false,
@@ -41,16 +43,42 @@ const Header = () => {
     return () => {};
   }, [state.isReady]);
 
-  const { fullPage } = useState().plugins;
+  const { fullPage } = plugins;
+
+  // -----
+  // ----- on scroll logic -----
+  // -----
+
+  // const [y, setY] = React.useState(null as any);
+
+  React.useEffect(() => {
+    setYScrollPosition(window.scrollY);
+  }, []);
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', (e: any) => {
+      // console.log(e.currentTarget.scrollY)
+      setYScrollPosition(e.currentTarget.scrollY);
+    });
+
+    return () => {
+      // return a cleanup function to unregister our function since its gonna run multiple times
+      window.removeEventListener('scroll', (e) => console.log(e));
+    };
+  }, [yScrollPosition]);
 
   return (
     <Background
-      color={
-        fullPage?.activeSection === undefined ||
-        fullPage?.activeSection === 'welcome'
-          ? 'bg-transparent'
-          : 'bg-white'
-      }
+      color={`
+        ${
+          fullPage?.activeSection === undefined ||
+          fullPage?.activeSection === 'welcome'
+            ? 'bg-transparent'
+            : 'bg-white'
+        }
+
+        ${yScrollPosition > 30 && '!bg-white'}
+      `}
       className={`fixed top-0 w-full z-10 transition-all duration-300 ${
         state.isAnimationDone ? '' : ''
       }`}

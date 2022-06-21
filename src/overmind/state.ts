@@ -3,6 +3,7 @@ type State = {
   auth: any;
   modal: any;
   plugins: any;
+  yScrollPosition: number;
 };
 
 export const state: State = {
@@ -19,4 +20,5 @@ export const state: State = {
   plugins: {
     fullPage: null,
   },
+  yScrollPosition: 0,
 };

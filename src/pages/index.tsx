@@ -56,7 +56,9 @@ const Home = () => {
             : 'opacity-0 invisible'
         }`}
         onClick={() => {
-          FPA.moveSectionDown();
+          if (FPA) {
+            FPA.moveSectionDown();
+          }
         }}
       >
         <Player
