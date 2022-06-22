@@ -10,7 +10,7 @@ import { Section } from '@components/layout';
 
 const ContactUs = () => {
   const numOfPeople = ['1 - 50', '50 - 200', '200 - 5000', '5000+'];
-  const interest = ['qwerty', 'asdfgh', 'uiopz', 'jklxcv'];
+  const interest = ['Mobile App Development', 'Mobile Game', 'NFT', 'Others'];
 
   const [state, setState] = React.useState({
     isReady: false,
@@ -124,7 +124,7 @@ const ContactUs = () => {
                       required
                     >
                       <option value="" disabled selected>
-                        Blockchain of interest
+                        Interested in
                       </option>
                       {interest.map((item) => (
                         <option key={item} value={item}>
