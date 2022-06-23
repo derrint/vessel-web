@@ -234,6 +234,7 @@ const Highlights = () => {
                     </p> */}
                     <div
                       className="html-content-wrapper"
+                      style={{ overflowWrap: 'anywhere' }}
                       dangerouslySetInnerHTML={{
                         __html: item.description,
                       }}
