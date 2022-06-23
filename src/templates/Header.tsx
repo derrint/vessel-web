@@ -17,12 +17,13 @@ import { useActions, useState } from '@overmind/index';
 
 const Header = () => {
   const router = useRouter();
-  const { plugins, yScrollPosition } = useState();
+  const { plugins, yScrollPosition, header } = useState();
   const { setYScrollPosition } = useActions();
 
   const [state, setState] = React.useState({
     isReady: false,
     isAnimationDone: false,
+    isScrolling: false,
   });
 
   React.useEffect(() => {
@@ -49,23 +50,33 @@ const Header = () => {
   // ----- on scroll logic -----
   // -----
 
-  // const [y, setY] = React.useState(null as any);
-
   React.useEffect(() => {
-    setYScrollPosition(window.scrollY);
-  }, []);
+    const onScroll = () => {
+      // ----- update y scroll position -----
+      setYScrollPosition(window.pageYOffset);
 
-  React.useEffect(() => {
-    window.addEventListener('scroll', (e: any) => {
-      // console.log(e.currentTarget.scrollY)
-      setYScrollPosition(e.currentTarget.scrollY);
-    });
-
-    return () => {
-      // return a cleanup function to unregister our function since its gonna run multiple times
-      window.removeEventListener('scroll', (e) => console.log(e));
+      // ----- set scrolling state -----
+      setState({ ...state, isScrolling: true });
+      if (state.isScrolling) {
+        setTimeout(() => {
+          setState({ ...state, isScrolling: false });
+        }, 1000);
+      }
     };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
   }, [yScrollPosition]);
+
+  React.useEffect(() => {
+    if (state.isScrolling && header.menu.isOpened) {
+      const body = document.getElementById('mobile-header-menu-button');
+      body?.click();
+    }
+
+    return () => {};
+  }, [state.isScrolling]);
 
   return (
     <Background
@@ -77,7 +88,7 @@ const Header = () => {
             : 'bg-white'
         }
 
-        ${yScrollPosition > 30 && '!bg-white'}
+        ${yScrollPosition > 30 ? '!bg-white' : ''}
       `}
       className={`fixed top-0 w-full z-10 transition-all duration-300 ${
         state.isAnimationDone ? '' : ''

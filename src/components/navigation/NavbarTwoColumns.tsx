@@ -39,7 +39,11 @@ const NavbarTwoColumns = (props: INavbarProps) => {
         </ul>
 
         <DropdownMenu
-          title={<FiMenu size={24} />}
+          title={
+            <div id="mobile-header-menu-button">
+              <FiMenu size={24} />
+            </div>
+          }
           items={menusMapped}
           onChange={(v: any) => {
             const clickedMenu = menus.find((x) => x.id === v);

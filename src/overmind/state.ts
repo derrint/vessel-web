@@ -4,6 +4,7 @@ type State = {
   modal: any;
   plugins: any;
   yScrollPosition: number;
+  header: any;
 };
 
 export const state: State = {
@@ -21,4 +22,9 @@ export const state: State = {
     fullPage: null,
   },
   yScrollPosition: 0,
+  header: {
+    menu: {
+      isOpened: false,
+    },
+  },
 };

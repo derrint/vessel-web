@@ -29,3 +29,7 @@ export const setFullPage = async (context: any, payload: object) => {
 export const setYScrollPosition = async (context: any, payload: number) => {
   context.state.yScrollPosition = payload;
 };
+
+export const setHeader = async (context: any, payload: object) => {
+  context.state.header = payload;
+};
