@@ -135,6 +135,39 @@ const BannerCTA = () => {
             </Link>
           </div>
         </Fade>
+
+        {/* <Fade bottom duration={750} delay={250} when={state.isReady}>
+          <div className="mt-4 z-[2] flex gap-3 justify-center">
+            <Link
+              href={
+                'https://apps.apple.com/us/app/vessel-nft-wallet/id1596353181'
+              }
+              passHref
+            >
+              <a className="flex items-center text-primary" target="_blank">
+                <img
+                  className={'h-11'}
+                  src="/assets/images/badges/badge-app-store.png"
+                  alt=""
+                />
+              </a>
+            </Link>
+            <Link
+              href={
+                'https://play.google.com/store/apps/details?id=io.openvessel.wallet'
+              }
+              passHref
+            >
+              <a className="flex items-center text-primary" target="_blank">
+                <img
+                  className={'h-16'}
+                  src="/assets/images/badges/badge-google-play.png"
+                  alt=""
+                />
+              </a>
+            </Link>
+          </div>
+        </Fade> */}
       </Section>
     </Background>
   );
