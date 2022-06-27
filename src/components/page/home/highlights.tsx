@@ -286,7 +286,7 @@ end`}
                         >
                           <img
                             className={'h-11'}
-                            src="/assets/images/badges/badge-app-store.png"
+                            src="/assets/images/badges/badge-app-store-2.png"
                             alt=""
                           />
                         </a>
@@ -303,7 +303,7 @@ end`}
                         >
                           <img
                             className={'h-16'}
-                            src="/assets/images/badges/badge-google-play.png"
+                            src="/assets/images/badges/badge-google-play-2.png"
                             alt=""
                           />
                         </a>
